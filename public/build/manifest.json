@@ -1,0 +1,93 @@
+{
+  "public/font/Matter-Bold.eot": {
+    "file": "assets/Matter-Bold-CzbsnCC6.eot",
+    "src": "public/font/Matter-Bold.eot"
+  },
+  "public/font/Matter-Bold.ttf": {
+    "file": "assets/Matter-Bold-uTc7hS5s.ttf",
+    "src": "public/font/Matter-Bold.ttf"
+  },
+  "public/font/Matter-Bold.woff": {
+    "file": "assets/Matter-Bold-C6Kx7dxF.woff",
+    "src": "public/font/Matter-Bold.woff"
+  },
+  "public/font/Matter-Bold.woff2": {
+    "file": "assets/Matter-Bold-YPAQyupR.woff2",
+    "src": "public/font/Matter-Bold.woff2"
+  },
+  "public/font/Matter-Light.eot": {
+    "file": "assets/Matter-Light-OPMEnYTI.eot",
+    "src": "public/font/Matter-Light.eot"
+  },
+  "public/font/Matter-Light.ttf": {
+    "file": "assets/Matter-Light-C0xwY_uK.ttf",
+    "src": "public/font/Matter-Light.ttf"
+  },
+  "public/font/Matter-Light.woff": {
+    "file": "assets/Matter-Light-B4JbWnGO.woff",
+    "src": "public/font/Matter-Light.woff"
+  },
+  "public/font/Matter-Light.woff2": {
+    "file": "assets/Matter-Light-Ch1cNSyM.woff2",
+    "src": "public/font/Matter-Light.woff2"
+  },
+  "public/font/Matter-Medium.eot": {
+    "file": "assets/Matter-Medium-ByVy_PeR.eot",
+    "src": "public/font/Matter-Medium.eot"
+  },
+  "public/font/Matter-Medium.ttf": {
+    "file": "assets/Matter-Medium-CDWEWdmy.ttf",
+    "src": "public/font/Matter-Medium.ttf"
+  },
+  "public/font/Matter-Medium.woff": {
+    "file": "assets/Matter-Medium-CE6wJYqD.woff",
+    "src": "public/font/Matter-Medium.woff"
+  },
+  "public/font/Matter-Medium.woff2": {
+    "file": "assets/Matter-Medium-BrnSrvWg.woff2",
+    "src": "public/font/Matter-Medium.woff2"
+  },
+  "public/font/Matter-Regular.eot": {
+    "file": "assets/Matter-Regular-_fjCo8s-.eot",
+    "src": "public/font/Matter-Regular.eot"
+  },
+  "public/font/Matter-Regular.ttf": {
+    "file": "assets/Matter-Regular-1oD-VCn9.ttf",
+    "src": "public/font/Matter-Regular.ttf"
+  },
+  "public/font/Matter-Regular.woff": {
+    "file": "assets/Matter-Regular-D5TXd79i.woff",
+    "src": "public/font/Matter-Regular.woff"
+  },
+  "public/font/Matter-Regular.woff2": {
+    "file": "assets/Matter-Regular-s2TwCCvu.woff2",
+    "src": "public/font/Matter-Regular.woff2"
+  },
+  "public/font/Matter-SemiBold.eot": {
+    "file": "assets/Matter-SemiBold-CZF4ngEx.eot",
+    "src": "public/font/Matter-SemiBold.eot"
+  },
+  "public/font/Matter-SemiBold.ttf": {
+    "file": "assets/Matter-SemiBold-ChkBllDC.ttf",
+    "src": "public/font/Matter-SemiBold.ttf"
+  },
+  "public/font/Matter-SemiBold.woff": {
+    "file": "assets/Matter-SemiBold-BTLKqQh1.woff",
+    "src": "public/font/Matter-SemiBold.woff"
+  },
+  "public/font/Matter-SemiBold.woff2": {
+    "file": "assets/Matter-SemiBold-DBrfmZpf.woff2",
+    "src": "public/font/Matter-SemiBold.woff2"
+  },
+  "resources/css/site.css": {
+    "file": "assets/site-c_GeCUGw.css",
+    "src": "resources/css/site.css",
+    "isEntry": true
+  },
+  "resources/js/site.js": {
+    "file": "assets/site-l0sNRNKZ.js",
+    "name": "site",
+    "src": "resources/js/site.js",
+    "isEntry": true
+  }
+}

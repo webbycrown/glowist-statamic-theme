@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+{{ partial:head-link }}
+
+{{ if segment_1 == "login" }}
+<body class="bg-[#F2F2F2] relative overflow-hidden bg-cover bg-center bg-no-repeat"  style="background-image: url('{{ theme:asset src="assets/image/login-bg.png" }}');">
+    {{ template_content }}
+</body>
+{{ else }}
+
+<body>
+    <!-- ====== Main-Content ====== -->
+    <main class="h-full">
+        <!-- ====== Header ====== -->
+        {{ partial:head }}
+        <!-- ====== End-Header ====== -->
+        <!-- ====== Sidebar ====== -->
+         {{ partial:sidebar }}
+        <!-- ====== End-Sidebar ====== -->
+        <!-- ====== Main-Content ====== -->
+        
+        <div class="xl:ms-[250px] 2sm:px-5 px-4 py-4">
+
+            {{ template_content }}
+
+        </div>
+        <!-- ====== End-Main-Content ====== -->
+    </main>
+    <!-- ====== End-Main-Content ====== -->
+</body>
+{{ /if }}
+</html>
+
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "timeOut": "5000"
+    };
+
+    
+</script>

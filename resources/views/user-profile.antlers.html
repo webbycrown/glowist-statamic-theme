@@ -1,0 +1,12 @@
+{{ user id="{segment_2}" }}
+    {{ background_image }}
+        <img src="{{ url }}" alt="Background" width="710" height="200" class="w-full h-full object-cover">
+    {{ /background_image }}
+
+    <a href="#" class="w-full">
+        <img width="260" height="180" src="{{ avatar:url }}" alt="{{ name }}" class="w-full object-cover">
+    </a>
+
+    <h3>{{ name }}</h3>
+    <p>{{ job_title }}</p>
+{{ /user }}

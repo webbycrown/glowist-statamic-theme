@@ -1,0 +1,288 @@
+{{ if {!session:has key="author_logged_in"} == true }}
+
+    <p>Form submission was not successful.</p>
+{{ redirect to="/" }}
+{{else}}
+
+    <!-- ====== Main-Content ====== -->
+    <main class="h-screen w-full relative">
+        <div class="h-screen overflow-auto grid justify-center items-center sm:p-5 p-3">
+            <!-- logo -->
+            <div class="lg:absolute lg:w-fit w-full xl:top-[40px] xl:right-[60px] lg:top-[30px] lg:right-[40px]">
+                <a href="javascript:;" class="flex w-[118px] lg:m-0 mt-3 mx-auto">{{ setting:logo }}<img height="118" width="24" src="{{ url }}" alt="/" class="w-full">{{ /setting:logo }}</a>
+            </div>
+            <!-- logo -->
+            <!-- White Box -->
+            <div class="bg-white max-w-[570px] w-full mx-auto rounded-2xl 2sm:px-[50px] 2sm:py-[45px] p-[30px] relative border border-gray-400 z-10 lg:mt-0 mt-[30px]">
+                <div>
+                    <!-- Login -->
+
+
+                    {{ if errors }}
+                    <ul>
+                        {{ errors }}
+                        <li>{{ value }}</li>
+                        {{ /errors }}
+                    </ul>
+                    {{ /if }}
+
+                    <div>
+                        <h2 class="font-matter text-gray-900 font-bold sm:text-3xl 2sm:text-2xl text-[22px] mb-2">Login</h2>
+                        <p class="font-matter 2sm:text-base text-sm text-gray-800">By continuing, you agree to our <a href="/terms-of-use" class="text-gray-900 underline hover:no-underline">Terms of use</a> and acknowledge that you understand the <a href="/privacy-policy" class="text-gray-900 underline hover:no-underline">Privacy Policy</a>.</p>
+                        <div class="flex 2sm:flex-nowrap flex-wrap my-5 hidden">
+                            <a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5 2sm:me-3 2sm:mb-0 mb-3">
+                                <div class="me-2 w-6">
+                                    <img class="w-full" src="image/google.svg" alt="/">
+                                </div>
+                                Continue Google
+                            </a>
+                            <a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5">
+                                <div class="me-2 w-6">
+                                    <img class="w-full" src="image/apple.svg" alt="/">
+                                </div>
+                                Continue Apple
+                            </a>
+                        </div>
+                        <div class="flex items-center font-matter 2sm:mt-3 mt-2">
+                            <div class="w-full border-b border-gray-400"></div>
+                            <p class="font-matter sm:text-base text-sm text-gray-800 px-3 opacity-50">OR</p>
+                            <div class="w-full border-b border-gray-400"></div>
+                        </div>
+                        <div class="2sm:mt-4 mt-3">
+                            <form class="login-screen-form" id="login-screen-form" >
+                                   {{ csrf_field }}
+                                <div class="sm:mb-5 mb-4">
+                                    <label for="email" class="flex pb-2 font-matter text-base text-gray-900">Email</label>
+                                    <input id="email" name="email" type="email" class="input" required placeholder="Enter email...">
+                                </div>
+                                <div class="sm:mb-5 mb-4">
+                                    <label for="password" class="flex pb-2 font-matter text-base text-gray-900">Password</label>
+                                    <input id="password" name="password" type="password" class="input" required placeholder="Enter password...">
+                                </div>
+                                <div class="flex flex-wrap justify-between items-center cursor-pointer sm:mb-6 mb-5 hidden">
+                                    <p class="font-matter 2sm:text-base text-sm	text-gray-800">No account? <a href="javascript:;" class="hover:underline text-gray-900">Register</a></p>
+                                    <a href="javascript:;" class="font-matter 2sm:text-base text-sm text-gray-900 hover:underline">Forgot Password?</a>
+                                </div>
+                                <div class="w-full">
+                                    <button type="submit" class="w-full flex text-center justify-center text-white rounded-full 2sm:p-[12px] p-[10px] font-matter text-base bg-gray-900 border transition border-gray-900 hover:bg-white hover:border-gray-900 hover:text-gray-900">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Login -->
+                    <!-- Register -->
+                    <div class="hidden">
+                        <h2 class="font-matter text-gray-900 font-bold sm:text-3xl 2sm:text-2xl text-[22px] mb-2">Register</h2>
+                        <p class="font-matter 2sm:text-base text-sm text-gray-800">By continuing, you agree to our <a href="terms-of-use.html" class="text-gray-900 underline hover:no-underline">Terms of use</a> and acknowledge that you understand the <a href="privacy-policy.html" class="text-gray-900 underline hover:no-underline">Privacy Policy</a>.</p>
+                        <div class="flex 2sm:flex-nowrap flex-wrap my-5">
+                            <a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5 2sm:me-3 2sm:mb-0 mb-3">
+                                <div class="me-2 w-6">
+                                    <img class="w-full" src="image/google.svg" alt="/">
+                                </div>
+                                Continue Google
+                            </a>
+                            <a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5">
+                                <div class="me-2 w-6">
+                                    <img class="w-full" src="image/apple.svg" alt="/">
+                                </div>
+                                Continue Apple
+                            </a>
+                        </div>
+                        <div class="flex items-center font-matter 2sm:mt-3 mt-2">
+                            <div class="w-full border-b border-gray-400"></div>
+                            <p class="font-matter sm:text-base text-sm text-gray-800 px-3 opacity-50">OR</p>
+                            <div class="w-full border-b border-gray-400"></div>
+                        </div>
+                        <div class="2sm:mt-4 mt-3">
+                            <form>
+                                <div class="sm:mb-5 mb-4">
+                                    <label for="email" class="flex pb-2 font-matter text-base text-gray-900">Username</label>
+                                    <input id="email" name="text" type="text" class="input" placeholder="Enter username...">
+                                </div>
+                                <div class="sm:mb-5 mb-4">
+                                    <label for="email" class="flex pb-2 font-matter text-base text-gray-900">Email</label>
+                                    <input id="email" name="email" type="email" class="input" placeholder="Enter email...">
+                                </div>
+                                <div class="sm:mb-5 mb-4">
+                                    <label for="email" class="flex pb-2 font-matter text-base text-gray-900">Password</label>
+                                    <input id="email" name="email" type="email" class="input" placeholder="Enter password...">
+                                </div>
+                                <div class="flex flex-wrap justify-between items-center cursor-pointer sm:mb-6 mb-5">
+                                    <p class="font-matter 2sm:text-base text-sm	text-gray-800">Already account? <a href="javascript:;" class="hover:underline text-gray-900">Log in</a></p>
+                                </div>
+                                <div class="w-full">
+                                    <a href="javascript:;" class="w-full flex text-center justify-center text-white rounded-full 2sm:p-[12px] p-[10px] font-matter text-base bg-gray-900 border transition border-gray-900 hover:bg-white hover:border-gray-900 hover:text-gray-900">Register</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Register -->
+                    <!-- Forgot Password -->
+                    <div class="hidden">
+                        <h2 class="font-matter text-gray-900 font-bold sm:text-3xl 2sm:text-2xl text-[22px] mb-2">Forgot Password</h2>
+                        <p class="font-matter 2sm:text-base text-sm text-gray-800">By continuing, you agree to our <a href="terms-of-use.html" class="text-gray-900 underline hover:no-underline">Terms of use</a> and acknowledge that you understand the <a href="privacy-policy.html" class="text-gray-900 underline hover:no-underline">Privacy Policy</a>.</p>
+                        <div class="flex 2sm:flex-nowrap flex-wrap my-5">
+                            <a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5 2sm:me-3 2sm:mb-0 mb-3">
+                                <div class="me-2 w-6">
+                                    <img class="w-full" src="image/google.svg" alt="/">
+                                </div>
+                                Continue Google
+                            </a>
+                            <a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5">
+                                <div class="me-2 w-6">
+                                    <img class="w-full" src="image/apple.svg" alt="/">
+                                </div>
+                                Continue Apple
+                            </a>
+                        </div>
+                        <div class="flex items-center font-matter 2sm:mt-3 mt-2">
+                            <div class="w-full border-b border-gray-400"></div>
+                            <p class="font-matter sm:text-base text-sm text-gray-800 px-3 opacity-50">OR</p>
+                            <div class="w-full border-b border-gray-400"></div>
+                        </div>
+                        <div class="2sm:mt-4 mt-3">
+                            <form>
+                                <div class="sm:mb-5 mb-4">
+                                    <label for="email" class="flex pb-2 font-matter text-base text-gray-900">Username</label>
+                                    <input id="email" name="text" type="text" class="input" placeholder="Enter username...">
+                                </div>
+                                <div class="flex flex-wrap justify-between items-center cursor-pointer sm:mb-6 mb-5">
+                                    <p class="font-matter 2sm:text-base text-sm	text-gray-800">Back to <a href="javascript:;" class="hover:underline text-gray-900">Log in</a></p>
+                                </div>
+                                <div class="w-full">
+                                    <a href="javascript:;" class="w-full flex text-center justify-center text-white rounded-full 2sm:p-[12px] p-[10px] font-matter text-base bg-gray-900 border transition border-gray-900 hover:bg-white hover:border-gray-900 hover:text-gray-900">Forgot Password</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Forgot Password -->
+                    <!-- Reset Password -->
+                    <div class="hidden">
+                        <h2 class="font-matter text-gray-900 font-bold sm:text-3xl 2sm:text-2xl text-[22px] mb-2">Reset Password</h2>
+                        <p class="font-matter 2sm:text-base text-sm text-gray-800">By continuing, you agree to our <a href="terms-of-use.html" class="text-gray-900 underline hover:no-underline">Terms of use</a> and acknowledge that you understand the <a href="privacy-policy.html" class="text-gray-900 underline hover:no-underline">Privacy Policy</a>.</p>
+                        <div class="flex 2sm:flex-nowrap flex-wrap my-5">
+                            <a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5 2sm:me-3 2sm:mb-0 mb-3">
+                                <div class="me-2 w-6">
+                                    <img class="w-full" src="image/google.svg" alt="/">
+                                </div>
+                                Continue Google
+                            </a>
+                            <a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5">
+                                <div class="me-2 w-6">
+                                    <img class="w-full" src="image/apple.svg" alt="/">
+                                </div>
+                                Continue Apple
+                            </a>
+                        </div>
+                        <div class="flex items-center font-matter 2sm:mt-3 mt-2">
+                            <div class="w-full border-b border-gray-400"></div>
+                            <p class="font-matter sm:text-base text-sm text-gray-800 px-3 opacity-50">OR</p>
+                            <div class="w-full border-b border-gray-400"></div>
+                        </div>
+                        <div class="2sm:mt-4 mt-3">
+                            <form>
+                                <div class="sm:mb-5 mb-4">
+                                    <label for="email" class="flex pb-2 font-matter text-base text-gray-900">Password</label>
+                                    <input id="email" name="email" type="email" class="input" placeholder="Enter password...">
+                                </div>
+                                <div class="sm:mb-5 mb-4">
+                                    <label for="email" class="flex pb-2 font-matter text-base text-gray-900">Confirm Password</label>
+                                    <input id="email" name="email" type="email" class="input" placeholder="Enter password...">
+                                </div>
+                                <div class="flex flex-wrap justify-between items-center cursor-pointer sm:mb-6 mb-5">
+                                    <p class="font-matter 2sm:text-base text-sm	text-gray-800">Back to <a href="javascript:;" class="hover:underline text-gray-900">Log in</a></p>
+                                </div>
+                                <div class="w-full">
+                                    <a href="javascript:;" class="w-full flex text-center justify-center text-white rounded-full 2sm:p-[12px] p-[10px] font-matter text-base bg-gray-900 border transition border-gray-900 hover:bg-white hover:border-gray-900 hover:text-gray-900">Forgot Password</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Reset Password -->
+                </div>
+            </div>
+            <!-- White Box -->
+        </div>
+    </main>
+    <!-- ====== End-Main-Content ====== -->
+    <!-- BG Design -->
+    <!-- <div class="2xl:max-w-[1000px] 2xl:h-[1000px] xl:max-w-[600px] xl:h-[600px] w-full absolute 2xl:top-[-400px] 2xl:left-[-300px] xl:top-[-200px] xl:left-[-100px] z-[-1]">
+        <img width="1000" height="1000" src="image/design.png" alt="/" class="w-full h-full">
+    </div>
+    <div class="2xl:max-w-[1000px] 2xl:h-[1000px] xl:max-w-[600px] xl:h-[600px] w-full absolute 2xl:bottom-[-400px] 2xl:right-[-200px] xl:bottom-[-400px] xl:right-[-200px] z-[-1]">
+        <img width="1000" height="1000" src="image/design.png" alt="/" class="w-full h-full">
+    </div> -->
+    <!-- BG Design -->
+
+     <script type="text/javascript" src="{{ theme:asset src='assets/js/jquery.min.js' }}"></script>
+    <!-- Alpine CDN js -->
+    <script type="text/javascript" src="{{ theme:asset src='assets/js/cdn.min.js' }}"></script>
+    <!-- Alpine CDN js -->
+    <script type="text/javascript" src="{{ theme:asset src='assets/js/swiper-bundle.min.js' }}"></script>
+    <!-- Swiper Slider Js  -->
+     <script type="text/javascript" src="{{ theme:asset src='assets/js/all.min.js' }}"></script>
+     <script type="text/javascript" src="{{ theme:asset src='assets/js/custom.js' }}"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+     <script type="text/javascript">
+         /**
+         * Handle Customer Login Form Submission
+         * - Prevents default form submission
+         * - Submits login data via AJAX
+         * - Handles success, validation, and general errors
+         */
+        $(document).on("submit", "#login-screen-form", function(e) {
+            e.preventDefault(); // Prevent default form behavior
+
+            const form = $(this)[0]; // Get form DOM element
+            const formData = new FormData(form); // Create FormData object
+
+            $.ajax({
+                url: "{{ route:author.login }}", // Route to the login endpoint
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                success: function (data) {
+                    console.log(data);
+
+                    const res = $('#login-response'); // Area to show feedback messages
+                    $('#login-screen-form .error').html(''); // Clear all field errors
+
+                    if (data.status == 'success') {
+                        toastr.success(data.message);
+
+                         window.location.href = "/";
+                        
+
+                    } else if (data.status == 'validation') {
+                         toastr.error(data.message);
+                        // Show validation messages next to form fields
+                        Object.entries(data.errors).forEach(([errorKey, error]) => {
+                            $('#login-screen-form .error-' + errorKey).html(error);
+                        });
+
+                    } else if (data.status == 'error') {
+                         toastr.error(data.message);
+                        // Show custom error message
+                        res.html(`<span class="text-start text-danger">${data.message}</span>`);
+
+                    } else {
+                        // Generic fallback error
+                        res.html(`<span class="text-start text-danger">Something went wrong</span>`);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // Log AJAX errors
+                    console.error('AJAX error:', error);
+                }
+            });
+
+            return false;
+        });
+
+     </script>
+{{/if}}

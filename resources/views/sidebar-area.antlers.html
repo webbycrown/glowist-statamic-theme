@@ -1,0 +1,91 @@
+ <!-- blogs-Sidebar-area -->
+                 <div class="lg:block hidden max-w-[350px] w-full ps-[30px] border-s border-gray-400">
+                   
+                        <div class="relative">
+                            <input class="w-full rounded-full bg-white py-[8px] ps-10 pe-3 font-matter text-base font-light text-gray-800 placeholder:font-matter placeholder:text-base placeholder:font-light placeholder:text-gray-800 focus-visible:outline-none border border-gray-400 focus:border-[#d6d6d6]" type="text" name="query" id="sidebarSearchInput" placeholder="Search here..." value="">
+                            <span class="absolute top-[11px] left-4">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.1667 14.1667L17.5 17.5M2.5 9.16667C2.5 10.9348 3.20238 12.6305 4.45262 13.8807C5.70286 15.131 7.39856 15.8333 9.16667 15.8333C10.9348 15.8333 12.6305 15.131 13.8807 13.8807C15.131 12.6305 15.8333 10.9348 15.8333 9.16667C15.8333 7.39856 15.131 5.70286 13.8807 4.45262C12.6305 3.20238 10.9348 2.5 9.16667 2.5C7.39856 2.5 5.70286 3.20238 4.45262 4.45262C3.20238 5.70286 2.5 7.39856 2.5 9.16667Z" stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    
+                    <!-- Recent uploaded blogs -->
+                    <div class="pb-5 border-b border-gray-400 mb-5">
+                        <h4 class="font-matter text-lg text-gray-900 font-medium mb-3">Recent uploaded blogs</h4>
+
+
+                        <div class="by_default_list">
+                            <ul>
+                                {{ collection:blog sort="create_date:desc" limit="4" }}
+                                <li class="flex items-center mb-3">
+                                    {{ assets_field limit="1" }}
+                                    {{ if is_image }}
+                                    <a href="/blog/{{slug}}" class="flex w-full min-w-[60px] max-w-[60px] h-[60px]"><img width="56px" height="56px" src="{{ url }}" alt="{{title}}" class="w-full object-cover"></a>
+                                    {{ else }}
+                                     <a href="/blog/{{slug}}" class="flex w-full min-w-[60px] max-w-[60px] h-[60px]">{{ setting:default_image }}<img width="56px" height="56px" src="{{ url }}" alt="living-1.png" class="w-full object-cover">{{ /setting:default_image }}<</a>
+                                    {{ /if }}
+                                    {{ /assets_field }}
+                                    <div class="ps-4">
+                                        <h5 class="font-matter text-gray-900 hover:text-gray-800 font-medium mb-1 line-clamp-2"><a href="/blog/{{slug}}">{{ title | truncate:60 }}</a></h5>
+                                        <p class="font-matter text-sm text-gray-800">{{ if create_date }}
+                                            {{ create_date format="F j, Y" }}
+                                        {{ /if }}</p>
+                                    </div>
+                                </li>
+                             {{ /collection:blog }}
+                            </ul>
+                            <!-- <a href="javascript:;" class="see-more font-matter text-sm text-green font-light">See more blog...</a> -->
+                        </div>
+                        <div class="search_data">  <ul></ul></div>
+                    </div>
+                    <!-- Recent uploaded blogs -->
+                    <!-- People you may know -->
+                   <div class="pb-5 border-b border-gray-400 mb-5">
+                        <h4 class="font-matter text-lg text-gray-900 font-medium mb-5">People you may know</h4>
+                        <div>
+                            <ul> 
+                                {{ collection:authors sort="date:desc" limit="4" }}
+                                <li class="flex justify-between mb-4">
+                                    <div class="flex">
+                                        {{ if avatar }}
+                                        {{avatar}}
+                                        <a href="javascript:;" class="flex w-full max-w-[34px] h-[34px] rounded-full overflow-hidden me-[10px]">
+                                            <img height="30" width="30" src="{{url}}" alt="{{title}}" class="w-full h-full object-cover">
+                                        </a>
+
+                                        {{/avatar}}
+                                        {{ else }}
+                                        <a href="javascript:;" class="flex w-full min-w-[60px] max-w-[60px] h-[60px]"><img width="56px" height="56px" src="/assets/image/logo.png" alt="living-1.png" class="w-full object-cover"></a>
+                                        {{ /if }}
+                                        <div>
+                                            <h5 class="font-matter font-medium text-gray-900 hover:text-gray-800 font-semibold mb-1"><a href="javascript:;">{{title}}</a></h5>
+                                            <p class="line-clamp-2 font-matter text-sm text-gray-800">Neque porro quisquam est, qui dolorem ipsum quia...</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="javascript:;" class="plus-btn flex items-center justify-center w-[34px] h-[34px] rounded-full border border-gray-400 hover:bg-gray-900 hover:border-gray-900 hidden">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 6.85519H6.85714V11.998H5.14286V6.85519H0V5.1409H5.14286V-0.00195312H6.85714V5.1409H12V6.85519Z" fill="#191919"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </li>
+                                {{ /collection:authors }}
+                            </ul>
+                            <a href="/authors" class="see-more font-matter text-sm text-green font-light">See more author...</a>
+                        </div>
+                    </div>
+                    <!-- People you may know -->
+                    <!-- Recommended Topic -->
+                    <div class="mb-5">
+                        <h4 class="font-matter text-lg text-gray-900 font-medium mb-5">Recommended Topic</h4>
+                        <ul class="flex flex-wrap">
+                            {{ taxonomy:tag }}
+                            <li class="me-[6px] mb-[8px]"><a href="javascript:;" class="flex font-matter text-sm text-gray-900 rounded-full px-[13px] py-[7px] bg-gray-500">{{ title }}</a></li>
+                            {{ /taxonomy:tag}}
+                        </ul>
+                    </div>
+                    <!-- Recommended Topic -->
+                 </div>
+                <!-- blogs-Sidebar-area -->

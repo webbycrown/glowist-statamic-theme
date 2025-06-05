@@ -1,0 +1,12 @@
+ {{ if {session:has key="author_logged_in"} != false }}
+ 
+ <input type="hidden" name="user_id" id="user_id" value="{{ id }}">
+ <input type="hidden" name="author_id" id="author_id" value="{{ author_session:id }}">
+ 
+ {{ if {author_session:is_following author_id="{id}"} }}
+ <button class="btn-small following" data-user_id="{{ id }}" data-author_id="{{ author_session:id }}" data-action="unfollow">Following</button>
+ {{ else }}
+ <button class="btn-small" data-user_id="{{ id }}" data-author_id="{{ author_session:id }}" data-action="follow">Follow</button>
+ {{ /if }}
+ 
+ {{ /if }}

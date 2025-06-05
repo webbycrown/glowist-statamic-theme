@@ -1,0 +1,51 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: e_mail
+            field:
+              type: text
+              display: E-mail
+              validate:
+                - required
+                - email
+          -
+            handle: favicon
+            field:
+              container: assets
+              type: assets
+              display: Favicon
+              validate:
+                - required
+          -
+            handle: copyright
+            field:
+              type: text
+              display: Copyright
+              validate:
+                - required
+          -
+            handle: logo
+            field:
+              container: assets
+              type: assets
+              display: Logo
+              validate:
+                - required
+          -
+            handle: default_background_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Default Background Image'
+          -
+            handle: default_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Default Image'

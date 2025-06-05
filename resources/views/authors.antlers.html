@@ -1,0 +1,53 @@
+
+            <div class="flex justify-center">
+                <!-- Aurhors -->
+                <div class="max-w-[1130px] w-full mx-auto">
+                    <h2 class="font-matter font-semibold sm:text-3xl 2sm:text-2xl text-[22px] sm:my-[20px] mb-[15px] mt-2">Authors</h2>
+                    <div class="authors-grid grid md:grid-cols-4 sm:grid-cols-3 2sm:grid-cols-2 md:gap-[30px] gap-[20px]">
+                       {{ collection:authors}}
+                        <div class="author-item border border-gray-500">
+                            <a href="/authors/{{ slug }}" class="w-full"> {{ avatar }}<img width="260" height="180" src="{{url}}" alt="{{title}}" class="w-full object-cover"> {{ /avatar }}</a>
+                            <div class="p-3">
+                                <h3 class="font-matter font-semibold lg:text-lg text-base text-gray-900 hover:text-gray-800"><a href="/authors/{{ slug }}">{{title}}</a></h3>
+                                <p class="font-matter lg:text-sm text-xs text-gray-800 mb-3">{{ job_title }}</p>
+
+                                 <ul class="social-app">
+                                   <li>
+                                       {{ if social:facebook_url }}
+                                        <a href="{{ social:facebook_url }}">
+                                        {{ else }}
+                                        <a href="javascript:;">
+                                        {{ /if }}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M4.9375 7.46094V10.4609H7.1875V15.7109H10.1875V10.4609H12.4375L13.1875 7.46094H10.1875V5.96094C10.1875 5.76203 10.2665 5.57126 10.4072 5.43061C10.5478 5.28996 10.7386 5.21094 10.9375 5.21094H13.1875V2.21094H10.9375C9.94294 2.21094 8.98911 2.60603 8.28585 3.30929C7.58259 4.01255 7.1875 4.96638 7.1875 5.96094V7.46094H4.9375Z" stroke="#191919" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a></li>
+                                    <li>
+                                        {{ if social:instagram_url }}
+                                        <a href="{{ social:instagram_url }}">
+                                        {{ else }}
+                                         <a href="javascript:;">
+                                        {{ /if }}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.24219 3.52356C4.89599 3.52356 3.80469 4.61487 3.80469 5.96106V11.9611C3.80469 13.3073 4.89599 14.3986 6.24219 14.3986H12.2422C13.5884 14.3986 14.6797 13.3073 14.6797 11.9611V5.96106C14.6797 4.61487 13.5884 3.52356 12.2422 3.52356H6.24219ZM2.67969 5.96106C2.67969 3.99355 4.27467 2.39856 6.24219 2.39856H12.2422C14.2097 2.39856 15.8047 3.99355 15.8047 5.96106V11.9611C15.8047 13.9286 14.2097 15.5236 12.2422 15.5236H6.24219C4.27467 15.5236 2.67969 13.9286 2.67969 11.9611V5.96106ZM9.24219 7.27356C8.31021 7.27356 7.55469 8.02908 7.55469 8.96106C7.55469 9.89304 8.31021 10.6486 9.24219 10.6486C10.1742 10.6486 10.9297 9.89304 10.9297 8.96106C10.9297 8.02908 10.1742 7.27356 9.24219 7.27356ZM6.42969 8.96106C6.42969 7.40776 7.68889 6.14856 9.24219 6.14856C10.7955 6.14856 12.0547 7.40776 12.0547 8.96106C12.0547 10.5144 10.7955 11.7736 9.24219 11.7736C7.68889 11.7736 6.42969 10.5144 6.42969 8.96106ZM13.1797 5.58606C13.1797 5.2754 12.9278 5.02356 12.6172 5.02356C12.3065 5.02356 12.0547 5.2754 12.0547 5.58606V5.58706C12.0547 5.89772 12.3065 6.14956 12.6172 6.14956C12.9278 6.14956 13.1797 5.89772 13.1797 5.58706V5.58606Z" fill="#191919"/>
+                                        </svg>
+                                    </a></li>
+                                    <li>
+                                        {{ if social:twitter_url }}
+                                        <a href="{{ social:twitter_url }}">
+                                        {{ else }}
+                                        <a href="javascript:;">
+                                        {{ /if }}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                            <path d="M16.2266 2.92865C15.4766 3.29615 14.7416 3.4454 13.9766 3.67115C13.1358 2.7224 11.8893 2.6699 10.6916 3.1184C9.49381 3.5669 8.70931 4.6634 8.72656 5.92115V6.67115C6.29281 6.7334 4.12531 5.6249 2.72656 3.67115C2.72656 3.67115 -0.409938 9.2459 5.72656 11.9212C4.32256 12.8564 2.92231 13.4872 1.22656 13.4212C3.70756 14.7734 6.41131 15.2384 8.75206 14.5589C11.4371 13.7789 13.6436 11.7667 14.4903 8.7524C14.7429 7.83566 14.8683 6.88855 14.8631 5.93765C14.8616 5.7509 15.9956 3.85865 16.2266 2.9279V2.92865Z" stroke="#191919" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a></li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        {{ /collection:authors }}
+                    </div>
+                </div>
+                <!-- Aurhors -->
+            </div>

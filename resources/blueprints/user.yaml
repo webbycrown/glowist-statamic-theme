@@ -1,0 +1,84 @@
+title: User
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: email
+            field:
+              type: text
+              input_type: email
+              display: 'Email Address'
+              listable: true
+              input: email
+          -
+            handle: roles
+            field:
+              type: user_roles
+              mode: select
+              width: 50
+              listable: true
+              filterable: false
+          -
+            handle: groups
+            field:
+              type: user_groups
+              mode: select
+              width: 50
+              listable: true
+              filterable: false
+          -
+            handle: avatar
+            field:
+              type: assets
+              max_files: 1
+              container: assets
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+          -
+            handle: job_title
+            field:
+              type: text
+              display: 'Job Title'
+              validate:
+                - required
+          -
+            handle: socials_url
+            field:
+              type: grid
+              display: 'Socials Url'
+              fields:
+                -
+                  handle: name
+                  field:
+                    type: text
+                    display: Name
+                    validate:
+                      - required
+                -
+                  handle: url
+                  field:
+                    type: textarea
+                    display: Url
+                    validate:
+                      - required
+  user_profile:
+    display: 'User Profile'
+    sections:
+      -
+        display: 'New Section'
+  new_tab:
+    display: 'New Tab'
+    sections:
+      -
+        display: 'New Section'
