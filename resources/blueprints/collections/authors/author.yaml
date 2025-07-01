@@ -1,0 +1,127 @@
+title: Author
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Name
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              validate:
+                - required
+                - email
+          -
+            handle: password
+            field:
+              input_type: password
+              type: text
+              display: Password
+              validate:
+                - required
+          -
+            handle: avatar
+            field:
+              container: assets
+              type: assets
+              display: Avatar
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+          -
+            handle: job_title
+            field:
+              type: text
+              display: 'Job Title'
+          -
+            handle: background_image
+            field:
+              max_files: 3
+              container: assets
+              type: assets
+              display: 'Background Image'
+          -
+            handle: about
+            field:
+              buttons:
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - quote
+                - link
+                - image
+                - table
+                - strikethrough
+                - asset
+                - code
+                - codeblock
+              type: markdown
+              display: About
+              validate:
+                - required
+          -
+            handle: hobby
+            field:
+              mode: select
+              taxonomies:
+                - hobby
+              type: terms
+              display: Hobby
+          -
+            handle: author_followers
+            field:
+              mode: select
+              collections:
+                - authors
+              query_scopes:
+                - author_followers
+              type: entries
+              display: 'Author Followers'
+          -
+            handle: social
+            field:
+              type: group
+              display: Social
+              fields:
+                -
+                  handle: facebook_url
+                  field:
+                    placeholder: 'Facebook Url'
+                    type: text
+                    display: 'Facebook Url'
+                -
+                  handle: instagram_url
+                  field:
+                    placeholder: 'Instagram Url'
+                    type: text
+                    display: 'Instagram Url'
+                -
+                  handle: twitter_url
+                  field:
+                    placeholder: 'Twitter Url'
+                    type: text
+                    display: 'Twitter Url'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

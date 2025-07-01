@@ -1,0 +1,637 @@
+<header class="sticky 2sm:py-[15px] 2sm:px-[20px] py-[12px] px-[16px] top-0 left-0 w-full bg-white border-b border-gray-400 z-20">
+	<div class="flex justify-between items-center">
+		<div class="flex items-center max-w-[220px] w-full">
+			<div class="2sm:mr-4 mr-3 xl:hidden">
+				<button name="mobile-menu-view" class="menu-toggle w-[20px] block">
+					<span class="w-full bg-gray-900 h-[2px] mb-1.5 block "></span>
+					<span class="w-full bg-gray-900 h-[2px] mb-1.5 block "></span>
+					<span class="w-full bg-gray-900 h-[2px] mb-0 block"></span>
+				</button>
+			</div>
+			<div>
+				{{ setting:logo }}
+				<a href="/" class="sm:flex hidden w-[118px]"><img height="118" width="24" src="{{ url }}" alt="/" class="w-full"></a>
+			
+				{{ /setting:logo }}
+				
+			</div>
+		</div>
+		<!-- center header -->
+		<div class="flex items-center w-full">
+			<!-- search bar -->
+			<div class="mobile-search 2xl:max-w-[500px] xl:max-w-[320px] w-full xl:mx-3">
+				<!-- <form class="w-full"> -->
+					<div class="relative">
+						<input class="w-full xl:rounded-full bg-gray-500 xl:py-[8px] md:py-[23px] 2sm:py-[18px] py-[15px] ps-10 pe-3 font-matter text-base font-light text-gray-800 placeholder:font-matter placeholder:text-base placeholder:font-light placeholder:text-gray-800 focus-visible:outline-none border border-gray-500 focus:border-gray-400 xl:focus:rounded-b-none xl:focus:rounded-t-2xl" type="text" name="query" id="searchInput" placeholder="Search here...">
+						<!-- search-popus -->
+						<div class="search-popup searchResults w-full absolute top-full bg-white 2xl:p-5 lg:p-3 2sm:p-4 p-3 border overflow-y-auto pr-2 border-gray-400 shadow-lg rounded-b-xl overflow-y-auto max-h-[400px] hidden">
+							<ul class="">
+
+							</ul>
+
+						</div>
+						<!-- search-popus -->
+						<span class="absolute xl:top-[11px] md:top-[27px] 2sm:top-[21px] top-[18px] left-4">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M14.1667 14.1667L17.5 17.5M2.5 9.16667C2.5 10.9348 3.20238 12.6305 4.45262 13.8807C5.70286 15.131 7.39856 15.8333 9.16667 15.8333C10.9348 15.8333 12.6305 15.131 13.8807 13.8807C15.131 12.6305 15.8333 10.9348 15.8333 9.16667C15.8333 7.39856 15.131 5.70286 13.8807 4.45262C12.6305 3.20238 10.9348 2.5 9.16667 2.5C7.39856 2.5 5.70286 3.20238 4.45262 4.45262C3.20238 5.70286 2.5 7.39856 2.5 9.16667Z" stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</span>
+						<div class="search-close xl:hidden flex absolute md:top-[27px] 2sm:top-[22px] top-[19px] end-[20px]">
+							<a href="javascript:;">
+								<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3 3L15 15M3 15L15 3" stroke="#191919" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				<!-- </form> -->
+			</div>
+			<!-- search bar -->
+			<!-- menus -->
+			<div class="2xl:ps-3 xl:flex hidden">
+				<ul class="flex">
+					{{ nav:header }}
+					<li><a href="{{ url }}" class="font-matter 2sm:text-base text-sm text-gray-800 hover:text-gray-900 2xl:px-5 px-3 py-3">{{ title }}</a></li>
+					{{ /nav:header }}
+				</ul>
+			</div>
+			<!-- menus -->
+		</div>
+		<!-- center header -->
+		<!-- user right -->
+		<div class="flex items-center ">
+			<div class="flex items-center 2sm:pe-3 2sm:border-e border-gray-400 hidden">
+				<!-- language Model -->
+				<div x-data="{open:false}">
+					<div class="flex items-center">
+						<button class="flex items-center font-matter md:text-base text-sm text-gray-800 hover:text-gray-900" @click="open=true">EN
+							<span class="chevron ms-auto flex p-1">
+								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M2.47108 3.52876C2.21073 3.26841 1.78862 3.26841 1.52827 3.52876C1.26792 3.78911 1.26792 4.21122 1.52827 4.47157L5.52827 8.47157C5.78862 8.73192 6.21073 8.73192 6.47108 8.47157L10.4711 4.47157C10.7314 4.21122 10.7314 3.78911 10.4711 3.52876C10.2107 3.26841 9.78862 3.26841 9.52827 3.52876L5.99967 7.05735L2.47108 3.52876Z" fill="#646464"></path>
+								</svg>
+							</span>
+						</button>
+					</div>
+					<!-- Full Popus -->
+					<div x-show="open" class="fixed top-0 left-0 bg-white z-50 w-full h-full grid overflow-y-auto p-5">
+						<!-- White Box -->
+						<div class="flex justify-center items-center bg-white w-full h-full rounded-2xl sm:p-[30px] relative">
+							<div class="grid grid-cols-2 2sm:gap-20 gap-8 max-w-[580px] w-full">
+								<div>
+									<a href="javascript:;" class="flex items-center font-matter lg:text-2xl sm:text-xl 2sm:text-lg text-sm font-medium text-gray-900 hover:text-gray-800">
+										<div class="lg:max-w-[60px] w-full lg:h-[60px] 2sm:max-w-[44px] 2sm:h-[44px] max-w-[30px] h-[30px] rounded-full overflow-hidden sm:me-5 me-3">
+											<img src="{{ theme:asset }}assets/image/english.png" width="60" height="60" alt="/" class="w-full h-full">
+										</div>
+										English
+									</a>
+								</div>
+								<div>
+									<a href="javascript:;" class="flex items-center font-matter lg:text-2xl sm:text-xl 2sm:text-lg text-sm font-medium text-gray-900 hover:text-gray-800">
+										<div class="lg:max-w-[60px] w-full lg:h-[60px] 2sm:max-w-[44px] 2sm:h-[44px] max-w-[30px] h-[30px] rounded-full overflow-hidden sm:me-5 me-3">
+											<img src="{{ theme:asset }}assets/image/german.png" width="60" height="60" alt="/" class="w-full h-full">
+										</div>
+										German
+									</a>
+								</div>
+								<div>
+									<a href="javascript:;" class="flex items-center font-matter lg:text-2xl sm:text-xl 2sm:text-lg text-sm font-medium text-gray-900 hover:text-gray-800">
+										<div class="lg:max-w-[60px] w-full lg:h-[60px] 2sm:max-w-[44px] 2sm:h-[44px] max-w-[30px] h-[30px] rounded-full overflow-hidden sm:me-5 me-3">
+											<img src="{{ theme:asset }}assets/image/hindi.png" width="60" height="60" alt="/" class="w-full h-full">
+										</div>
+										Hindi
+									</a>
+								</div>
+								<div>
+									<a href="javascript:;" class="flex items-center font-matter lg:text-2xl sm:text-xl 2sm:text-lg text-sm font-medium text-gray-900 hover:text-gray-800">
+										<div class="lg:max-w-[60px] w-full lg:h-[60px] 2sm:max-w-[44px] 2sm:h-[44px] max-w-[30px] h-[30px] rounded-full overflow-hidden sm:me-5 me-3">
+											<img src="{{ theme:asset }}assets/image/australian.png" width="60" height="60" alt="/" class="w-full h-full">
+										</div>
+										Australian
+									</a>
+								</div>
+								<div>
+									<a href="javascript:;" class="flex items-center font-matter lg:text-2xl sm:text-xl 2sm:text-lg text-sm font-medium text-gray-900 hover:text-gray-800">
+										<div class="lg:max-w-[60px] w-full lg:h-[60px] 2sm:max-w-[44px] 2sm:h-[44px] max-w-[30px] h-[30px] rounded-full overflow-hidden sm:me-5 me-3">
+											<img src="{{ theme:asset }}assets/image/arabic.png" width="60" height="60" alt="/" class="w-full h-full">
+										</div>
+										Arabic
+									</a>
+								</div>
+								<div>
+									<a href="javascript:;" class="flex items-center font-matter lg:text-2xl sm:text-xl 2sm:text-lg text-sm font-medium text-gray-900 hover:text-gray-800">
+										<div class="lg:max-w-[60px] w-full lg:h-[60px] 2sm:max-w-[44px] 2sm:h-[44px] max-w-[30px] h-[30px] rounded-full overflow-hidden sm:me-5 me-3">
+											<img src="{{ theme:asset }}assets/image/spanish.png" width="60" height="60" alt="/" class="w-full h-full">
+										</div>
+										Spanish
+									</a>
+								</div>
+							</div>
+							<!--== close Model ==-->
+							<button class="flex justify-center items-center font-matter 2sm:text-base text-sm text-gray-800 hover:text-gray-900 hover:underline 2sm:w-[36px] 2sm:h-[36px] w-[32px] h-[32px] p-2 rounded-full bg-gray-500 absolute lg:top-8 lg:right-8 top-0 right-0" @click="open=false">
+								<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M3 3L15 15M3 15L15 3" stroke="#191919" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+								</svg>
+							</button>
+							<!--== close Model ==-->
+						</div>
+						<!-- White Box -->
+					</div>
+					<!-- Full Popus -->
+				</div>
+				<!-- language Model -->
+			</div>
+			<div class="2sm:mx-4 mx-3 hidden">
+				<div class="notification-dropdown relative">
+					<a href="javascript:;" class="notification-ico relative flex w-full md:max-w-[24px] md:h-[24px] max-w-[20px] h-[20px]">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M18.7501 9.71V9.005C18.7501 5.136 15.7261 2 12.0001 2C8.27406 2 5.25006 5.136 5.25006 9.005V9.71C5.25127 10.5516 5.01111 11.3758 4.55806 12.085L3.45006 13.81C2.43906 15.385 3.21106 17.526 4.97006 18.024C9.56617 19.327 14.434 19.327 19.0301 18.024C20.7891 17.526 21.5611 15.385 20.5501 13.811L19.4421 12.086C18.9887 11.3769 18.7482 10.5527 18.7491 9.711L18.7501 9.71Z" stroke="black" stroke-width="1.5"/>
+							<path d="M7.5 19C8.155 20.748 9.922 22 12 22C14.078 22 15.845 20.748 16.5 19" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+						</svg>
+						<span class="flex items-center justify-center font-matter text-xs w-4 h-4 rounded-full bg-[#FF0000] text-white absolute top-[-3px] right-[-3px]">5</span>
+					</a>
+					<!-- notification-dropdown -->
+					<div class="notification-dropdown-popup absolute md:top-[45px] top-[38px] xl:left-[-90px] md:left-[-40px] 2sm:left-[-200px] left-[-110px] w-full 2sm:min-w-[380px] 2sm:max-w-[380px] min-w-[280px] max-w-[280px] border border-gray-400 bg-white rounded-lg shadow-lg hidden">
+						<div class="tabs-container">
+							<!-- Tabs -->
+							<div class="flex border-b border-gray-300">
+								<button class="font-matter 2sm:text-base text-sm w-1/2 tab-btn active px-4 py-2 border-b-2 border-gray-900 text-gray-900 flex items-center justify-center">Notifications<span class="ms-1 mt-[2px] flex items-center justify-center font-matter text-xs w-4 h-4 rounded-full bg-[#FF0000] text-white">5</span></button>
+								<button class="font-matter 2sm:text-base text-sm w-1/2 tab-btn px-4 py-2 text-gray-800 flex items-center justify-center">Messages</button>
+							</div>
+							<!-- Tab Content -->
+							<div class="tab-content">
+								<div class="tab-pane active">
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] border-b border-gray-400 sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-10.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Damira Roman</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">published post - 10:03 AM</p>
+											</div>
+										</div>
+										<div class="sm:max-w-[90px] w-full sm:h-[65px] max-w-[70px] h-[50px] ms-4">
+											<img width="90" height="65" src="{{ theme:asset }}assets/image/not-1.png" alt="/" class="w-full h-full object-cover">
+										</div> 
+									</div>
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] border-b border-gray-400 sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-11.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Harold Pham</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">Started following you - 5:00 AM</p>
+											</div>
+										</div>
+										<a href="javascript:;" class="btn-small">Follow</a>
+									</div>
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] border-b border-gray-400 sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-12.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Mina Machain</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">Commented on your post: Economy - 6:45 PM</p>
+											</div>
+										</div>
+										<div class="sm:max-w-[90px] w-full sm:h-[65px] max-w-[70px] h-[50px] ms-4">
+											<img width="90" height="65" src="{{ theme:asset }}assets/image/not-2.png" alt="/" class="w-full h-full object-cover">
+										</div> 
+									</div>
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] border-b border-gray-400 sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-2.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Pedro Baker</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">Wants to edit the file blackbite - 09:52 AM </p>
+												<div class="flex mt-2">
+													<a href="javascript:;" class="btn-small-dark me-2">Accept</a>
+													<a href="javascript:;" class="btn-small">Denny</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-12.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Aleena Watts</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">Liked your post - 07:15 AM</p>
+											</div>
+										</div>
+										<div class="sm:max-w-[90px] w-full sm:h-[65px] max-w-[70px] h-[50px] ms-4">
+											<img width="90" height="65" src="{{ theme:asset }}assets/image/not-3.png" alt="/" class="w-full h-full object-cover">
+										</div> 
+									</div>
+								</div>
+								<div class="tab-pane hidden">
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] border-b border-gray-400 sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-2.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Pedro Baker</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">Wants to edit the file blackbite - 09:52 AM </p>
+												<div class="flex mt-2">
+													<a href="javascript:;" class="btn-small-dark me-2">Accept</a>
+													<a href="javascript:;" class="btn-small">Denny</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] border-b border-gray-400 sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-12.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Aleena Watts</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">Liked your post - 07:15 AM</p>
+											</div>
+										</div>
+										<div class="sm:max-w-[90px] w-full sm:h-[65px] max-w-[70px] h-[50px] ms-4">
+											<img width="90" height="65" src="{{ theme:asset }}assets/image/not-3.png" alt="/" class="w-full h-full object-cover">
+										</div> 
+									</div>
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] border-b border-gray-400 sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-11.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Harold Pham</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">Started following you - 5:00 AM</p>
+											</div>
+										</div>
+										<a href="javascript:;" class="btn-small">Follow</a>
+									</div>
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] border-b border-gray-400 sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-12.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Mina Machain</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">Commented on your post: Economy - 6:45 PM</p>
+											</div>
+										</div>
+										<div class="sm:max-w-[90px] w-full sm:h-[65px] max-w-[70px] h-[50px] ms-4">
+											<img width="90" height="65" src="{{ theme:asset }}assets/image/not-2.png" alt="/" class="w-full h-full object-cover">
+										</div> 
+									</div>
+									<div class="flex items-start justify-between hover:bg-[#f9f9f9] sm:p-4 p-3">
+										<div class="flex">
+											<a href="javascript:;" class="flex mt-1 w-full sm:max-w-[34px] sm:h-[34px] max-w-[30px] h-[30px] rounded-full overflow-hidden me-[10px]">
+												<img height="30" width="30" src="{{ theme:asset }}assets/image/user-10.png" alt="/" class="w-full h-full">
+											</a>
+											<div>
+												<h5 class="font-matter font-medium sm:text-base text-sm text-gray-900 hover:text-gray-800 font-semibold mb-[1px]"><a href="javascript:;">Damira Roman</a></h5>
+												<p class="line-clamp-2 font-matter sm:text-sm text-xs text-gray-800">published post - 10:03 AM</p>
+											</div>
+										</div>
+										<div class="sm:max-w-[90px] w-full sm:h-[65px] max-w-[70px] h-[50px] ms-4">
+											<img width="90" height="65" src="{{ theme:asset }}assets/image/not-1.png" alt="/" class="w-full h-full object-cover">
+										</div> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- notification-dropdown -->
+				</div>
+			</div>
+			{{ if {session:has key="author_logged_in"} }}
+			<div class="user-dropdown relative">
+				<a href="javascript:;" class="flex 2sm:w-[28px] 2sm:h-[28px] w-[24px] h-[24px] rounded-full overflow-hidden">
+
+					<img height="34" width="34" src="{{ theme:asset }}assets/{{ author_session:avatar }}" alt="/" class="w-full h-full">
+				</a>
+				<!-- user-dropdown -->
+				<div class="user-dropdown-popup absolute 2sm:top-[45px] top-[38px] md:right-0 w-full 2sm:min-w-[230px] 2sm:max-w-[230px] min-w-[200px] max-w-[200px] border border-gray-400 bg-white rounded-lg shadow-lg hidden">
+					<div class="flex items-center 2sm:py-4 py-3 2sm:px-5 px-4">
+						<div class="relative">
+							<a href="my-profile.html" class="flex 2sm:w-[40px] 2sm:h-[40px] w-[36px] h-[36px] rounded-full overflow-hidden me-2">
+								<img height="34" width="34" src="{{ theme:asset }}assets/{{ author_session:avatar }}" alt="/" class="w-full h-full">
+							</a>
+							<span class="flex absolute right-2 bottom-0 w-[11px] h-[11px] rounded-full bg-green border-2 border-white"></span>
+						</div>
+						<div>
+							<h4 class="font-matter text-gray-900 2sm:text-base text-sm hover:text-gray-800 font-semibold mb-[1px]"><a href="/authors/{{ author_session:slug }}">
+
+							
+								{{ author_session:name }}</a></h4>
+							{{-- <p class="line-clamp-2 font-matter 2sm:text-sm text-xs text-gray-800">{{  author_session:job_title }}</p> --}}
+						</div>
+					</div>
+					<ul>
+						<li>
+							<a href="/authors/{{ author_session:slug }}" class="flex items-center 2sm:text-base text-sm font-matter text-gray-900 2sm:py-4 py-3 2sm:px-5 px-4 border-t border-gray-400 hover:bg-[#fafafa]">
+								<div class="sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] me-2"><img width="20" height="20" src="{{ theme:asset }}assets/image/profile.svg" alt="/" class="w-full h-full"></div>
+								My Profile
+							</a>
+						</li>
+						<li>
+							<a href="/profile-edit" class="flex items-center 2sm:text-base text-sm font-matter text-gray-900 2sm:py-4 py-3 2sm:px-5 px-4 border-t border-gray-400 hover:bg-[#fafafa]">
+								<div class="sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] me-2"><img width="20" height="20" src="{{ theme:asset }}assets/image/write-post.svg" alt="/" class="w-full h-full"></div>
+								Settings
+							</a>
+						</li>
+						<li class="hidden">
+							<a href="javascript:;" class="flex items-center 2sm:text-base text-sm font-matter text-gray-900 2sm:py-4 py-3 2sm:px-5 px-4 border-t border-gray-400 hover:bg-[#fafafa]">
+								<div class="sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] me-2"><img width="20" height="20" src="{{ theme:asset }}assets/image/create-add.svg" alt="/" class="w-full h-full"></div>
+								Create Add
+							</a>
+						</li>
+						<li class="hidden">
+							<a href="published-post.html" class="flex items-center 2sm:text-base text-sm font-matter text-gray-900 2sm:py-4 py-3 2sm:px-5 px-4 border-t border-gray-400 hover:bg-[#fafafa]">
+								<div class="sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] me-2"><img width="20" height="20" src="{{ theme:asset }}assets/image/my-posts.svg" alt="/" class="w-full h-full"></div>
+								My Posts
+							</a>
+						</li>
+						<li class="hidden">
+							<a href="javascript:;" class="flex items-center 2sm:text-base text-sm font-matter text-gray-900 2sm:py-4 py-3 2sm:px-5 px-4 border-t border-gray-400 hover:bg-[#fafafa]">
+								<div class="sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] me-2"><img width="20" height="20" src="{{ theme:asset }}assets/image/bookmark.svg" alt="/" class="w-full h-full"></div>
+								Bookmarks
+							</a>
+						</li>
+						<li>
+							<a href="about.html" class="hidden flex items-center 2sm:text-base text-sm font-matter text-gray-900 2sm:py-4 py-3 2sm:px-5 px-4 border-t border-gray-400 hover:bg-[#fafafa]">
+								<div class="sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] me-2"><img width="20" height="20" src="{{ theme:asset }}assets/image/help.svg" alt="/" class="w-full h-full"></div>
+								Help Center
+							</a>
+						</li>
+						<li>
+							{{ if {session:has key="author_logged_in"} }}
+							<form class="block" method="POST" action="{{ route:author.logout }}">
+								{{ csrf_field }}
+								<button type="submit" class="flex items-center w-full 2sm:text-base text-sm font-matter text-gray-900 2sm:py-4 py-3 2sm:px-5 px-4 border-t border-gray-400 hover:bg-[#fafafa]"><div class="sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] me-2"><img width="20" height="20" src="{{ theme:asset }}assets/image/signout.svg" alt="/" class="w-full h-full"></div>
+								Sign Out</button>
+							</form>
+							{{ /if }}
+						<!-- 
+							<a href="login.html" class="flex items-center 2sm:text-base text-sm font-matter text-gray-900 2sm:py-4 py-3 2sm:px-5 px-4 border-t border-gray-400 hover:bg-[#fafafa]">
+								<div class="sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] me-2"><img width="20" height="20" src="image/signout.svg" alt="/" class="w-full h-full"></div>
+								Sign Out
+							</a> -->
+						</li>
+					</ul>
+				</div>
+				<!-- user-dropdown -->
+			</div>
+			{{ else }}
+			<a  href="/login" class="flex items-center 2sm:text-base text-sm font-matter text-gray-900"><div class="sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] me-2"><img width="20" height="20" src="{{ theme:asset }}assets/image/signout.svg" alt="/" class="w-full h-full"></div>
+				login
+				{{ /if }}
+			<a href="javascript:;" class="flex items-center md:text-base text-[0px] md:ms-4 ms-2">
+				<div class="md:me-1 md:flex hidden"></div>
+			</a>
+			<a href="javascript:;" class="flex items-center md:text-base text-[0px] md:ms-4 ms-2">
+				<div></div>
+			</a>
+			
+			
+			<!-- <a href="javascript:;" class="flex items-center md:text-base text-[0px] md:ms-4 ms-2">
+				<div class="md:me-1 md:flex hidden">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+						<path d="M16.3046 12.1674V16.1151C16.3044 16.6737 16.0824 17.2093 15.6874 17.6043C15.2925 17.9992 14.7569 18.2212 14.1983 18.2215H3.88349C3.60586 18.2213 3.33099 18.1664 3.07468 18.0597C2.81836 17.953 2.58565 17.7968 2.38992 17.5999C2.19419 17.403 2.03929 17.1693 1.93413 16.9124C1.82897 16.6555 1.77561 16.3803 1.77714 16.1027V5.79942C1.77548 5.52223 1.82886 5.24747 1.93418 4.99106C2.03949 4.73465 2.19464 4.50169 2.39065 4.30569C2.58665 4.10968 2.81961 3.95453 3.07602 3.84921C3.33243 3.7439 3.60719 3.69052 3.88438 3.69218H7.83123" stroke="#191919" stroke-width="1.43025" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M16.3038 7.32385L12.6717 3.69087M5.40747 13.3771V11.4521C5.40925 11.1347 5.53551 10.8297 5.75868 10.6047L14.2339 2.12956C14.3464 2.01606 14.4804 1.92597 14.6279 1.86449C14.7755 1.80301 14.9338 1.77136 15.0937 1.77136C15.2535 1.77136 15.4118 1.80301 15.5594 1.86449C15.7069 1.92597 15.8409 2.01606 15.9534 2.12956L17.866 4.04207C17.9797 4.15453 18.07 4.28843 18.1316 4.43601C18.1932 4.58359 18.2249 4.74193 18.2249 4.90186C18.2249 5.06179 18.1932 5.22013 18.1316 5.36772C18.07 5.5153 17.9797 5.6492 17.866 5.76165L9.39077 14.2368C9.16536 14.4606 8.86103 14.5867 8.54343 14.5881H6.61847C6.29729 14.5881 5.98927 14.4605 5.76216 14.2334C5.53506 14.0063 5.40747 13.6982 5.40747 13.3771Z" stroke="#191919" stroke-width="1.43025" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div class="hidden md:hidden  hidden flex justify-center items-center min-w-[30px] max-w-[30px] h-[30px] border border-gray-400 rounded-full">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+						<g clip-path="url(#clip0_74_41)">
+							<path d="M13.3655 9.8488V13.209C13.3653 13.6845 13.1763 14.1404 12.8402 14.4766C12.504 14.8127 12.0481 15.0017 11.5726 15.0019H2.79291C2.5566 15.0018 2.32264 14.955 2.10447 14.8642C1.8863 14.7734 1.68822 14.6404 1.52162 14.4728C1.35501 14.3052 1.22317 14.1064 1.13366 13.8877C1.04415 13.669 0.998735 13.4347 1.00003 13.1984V4.42855C0.998625 4.19262 1.04406 3.95875 1.1337 3.7405C1.22334 3.52225 1.3554 3.32396 1.52224 3.15713C1.68907 2.99029 1.88736 2.85823 2.10561 2.76859C2.32386 2.67895 2.55773 2.63351 2.79366 2.63492H6.15313" stroke="#191919" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M13.3648 5.72615L10.2732 2.63384M4.09009 10.8785V9.24C4.0916 8.96982 4.19907 8.71024 4.38903 8.51877L11.6029 1.30489C11.6987 1.20828 11.8127 1.1316 11.9383 1.07927C12.0639 1.02694 12.1987 1 12.3347 1C12.4708 1 12.6055 1.02694 12.7311 1.07927C12.8567 1.1316 12.9707 1.20828 13.0666 1.30489L14.6945 2.93278C14.7913 3.0285 14.8681 3.14247 14.9205 3.26809C14.973 3.39371 15 3.52848 15 3.66461C15 3.80074 14.973 3.93551 14.9205 4.06113C14.8681 4.18675 14.7913 4.30072 14.6945 4.39644L7.48058 11.6103C7.28871 11.8008 7.02967 11.9081 6.75935 11.9093H5.12086C4.84748 11.9093 4.5853 11.8007 4.39199 11.6074C4.19869 11.414 4.09009 11.1519 4.09009 10.8785Z" stroke="#191919" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+						</g>
+					</svg>
+				</div>
+				Write
+			</a> -->
+			<a href="javascript:;" class="search-ico xl:hidden flex justify-center items-center md:ms-3 ms-2 w-full min-w-[30px] max-w-[30px] h-[30px] border border-gray-400 rounded-full">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+					<path d="M11.3333 11.3333L14 14M2 7.33333C2 8.74782 2.5619 10.1044 3.5621 11.1046C4.56229 12.1048 5.91885 12.6667 7.33333 12.6667C8.74782 12.6667 10.1044 12.1048 11.1046 11.1046C12.1048 10.1044 12.6667 8.74782 12.6667 7.33333C12.6667 5.91885 12.1048 4.56229 11.1046 3.5621C10.1044 2.5619 8.74782 2 7.33333 2C5.91885 2 4.56229 2.5619 3.5621 3.5621C2.5619 4.56229 2 5.91885 2 7.33333Z" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</a>
+			<a href="javascript:;" class="md:hidden flex justify-center items-center p-1.5 min-w-[30px] max-w-[30px] h-[30px] rounded-full bg-gray-900 md:ms-4 ms-2">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+					<path d="M7.2 7.20005C8.04869 7.20005 8.86263 6.86291 9.46274 6.26279C10.0629 5.66267 10.4 4.84874 10.4 4.00005C10.4 3.15136 10.0629 2.33742 9.46274 1.73731C8.86263 1.13719 8.04869 0.800049 7.2 0.800049C6.35131 0.800049 5.53737 1.13719 4.93726 1.73731C4.33714 2.33742 4 3.15136 4 4.00005C4 4.84874 4.33714 5.66267 4.93726 6.26279C5.53737 6.86291 6.35131 7.20005 7.2 7.20005Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M1.6001 13.6V12.8C1.5999 11.8552 1.83876 10.9257 2.29445 10.098C2.75013 9.27033 3.40782 8.57141 4.20628 8.0663C5.00475 7.56119 5.91804 7.26631 6.86113 7.20912C7.80422 7.15193 8.74644 7.33429 9.6001 7.73921M10.9081 10.732L11.7393 8.96961C11.7618 8.91923 11.7984 8.87644 11.8447 8.84642C11.8909 8.81639 11.9449 8.80042 12.0001 8.80042C12.0553 8.80042 12.1093 8.81639 12.1555 8.84642C12.2018 8.87644 12.2384 8.91923 12.2609 8.96961L13.0929 10.732L14.9513 11.0168C15.1897 11.0528 15.2841 11.36 15.1113 11.536L13.7673 12.9064L14.0841 14.8432C14.1249 15.092 13.8761 15.2816 13.6625 15.164L12.0001 14.2496L10.3377 15.164C10.1241 15.2816 9.8753 15.092 9.9161 14.844L10.2329 12.9064L8.8889 11.536C8.7161 11.36 8.8105 11.0528 9.0489 11.016L10.9081 10.732Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</a>
+			<!-- <a href="/contact-us" class="btn-primary md:flex hidden ms-4">
+				Membership
+			</a> -->
+		</div>
+		<!-- user right -->
+		<!-- login btn -->
+		<div class="flex items-center hidden">
+			<!-- Login Model -->
+			<div x-data="{open:false}">
+				<div class="flex items-center">
+					<button class="flex font-matter 2sm:text-base text-sm text-gray-800 hover:text-gray-900 hover:underline" @click="open=true">Login</button>
+					<a href="contact.html" class="btn-primary md:flex hidden ms-4">Membership</a>
+				</div>
+				<!-- Full Popus -->
+				<div x-show="open" class="sm:p-5 p-3 fixed top-0 left-0 bg-black/40 z-50 w-full h-full grid justify-center items-center overflow-y-auto">
+					<!-- White Box -->
+					<div class="bg-white max-w-[570px] w-full mx-auto rounded-2xl 2sm:px-[50px] 2sm:py-[45px] p-[30px] relative">
+						<div>
+							<!-- Login -->
+							<div>
+								<h2 class="font-matter text-gray-900 font-bold sm:text-3xl 2sm:text-2xl text-[22px] mb-2">Login</h2>
+								<p class="font-matter 2sm:text-base text-sm text-gray-800">By continuing, you agree to our <a href="terms-of-use.html" class="text-gray-900 underline hover:no-underline">Terms of use</a> and acknowledge that you understand the <a href="privacy-policy.html" class="text-gray-900 underline hover:no-underline">Privacy Policy</a>.</p>
+								<div class="flex 2sm:flex-nowrap flex-wrap my-5">
+									<a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5 2sm:me-3 2sm:mb-0 mb-3">
+										<div class="me-2 w-6">
+											<img class="w-full" src="{{ theme:asset }}assets/image/google.svg" alt="/">
+										</div>
+										Continue Google
+									</a>
+									<a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5">
+										<div class="me-2 w-6">
+											<img class="w-full" src="{{ theme:asset }}assets/image/apple.svg" alt="/">
+										</div>
+										Continue Apple
+									</a>
+								</div>
+								<div class="flex items-center font-matter 2sm:mt-3 mt-2">
+									<div class="w-full border-b border-gray-400"></div>
+									<p class="font-matter sm:text-base text-sm text-gray-800 px-3 opacity-50">OR</p>
+									<div class="w-full border-b border-gray-400"></div>
+								</div>
+								<div class="2sm:mt-4 mt-3">
+									<form>
+										<div class="sm:mb-5 mb-4">
+											<label for="email" class="flex pb-2 font-matter text-base text-gray-900">Email</label>
+											<input id="email" name="email" type="email" class="input" placeholder="Enter email...">
+										</div>
+										<div class="sm:mb-5 mb-4">
+											<label for="email" class="flex pb-2 font-matter text-base text-gray-900">Password</label>
+											<input id="email" name="email" type="email" class="input" placeholder="Enter password...">
+										</div>
+										<div class="flex flex-wrap justify-between items-center cursor-pointer sm:mb-6 mb-5">
+											<p class="font-matter 2sm:text-base text-sm text-gray-800">No account? <a href="javascript:;" class="hover:underline text-gray-900">Register</a></p>
+											<a href="javascript:;" class="font-matter 2sm:text-base text-sm text-gray-900 hover:underline">Forgot Password?</a>
+										</div>
+										<div class="w-full">
+											<a href="javascript:;" class="w-full flex text-center justify-center text-white rounded-full 2sm:p-[12px] p-[10px] font-matter text-base bg-gray-900 border transition border-gray-900 hover:bg-white hover:border-gray-900 hover:text-gray-900">Login</a>
+										</div>
+									</form>
+								</div>
+							</div>
+							<!-- Login -->
+							<!-- Register -->
+							<div class="hidden">
+								<h2 class="font-matter text-gray-900 font-bold sm:text-3xl 2sm:text-2xl text-[22px] mb-2">Register</h2>
+								<p class="font-matter 2sm:text-base text-sm text-gray-800">By continuing, you agree to our <a href="terms-of-use.html" class="text-gray-900 underline hover:no-underline">Terms of use</a> and acknowledge that you understand the <a href="privacy-policy.html" class="text-gray-900 underline hover:no-underline">Privacy Policy</a>.</p>
+								<div class="flex 2sm:flex-nowrap flex-wrap my-5">
+									<a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5 2sm:me-3 2sm:mb-0 mb-3">
+										<div class="me-2 w-6">
+											<img class="w-full" src="{{ theme:asset }}assets/image/google.svg" alt="/">
+										</div>
+										Continue Google
+									</a>
+									<a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5">
+										<div class="me-2 w-6">
+											<img class="w-full" src="{{ theme:asset }}assets/image/apple.svg" alt="/">
+										</div>
+										Continue Apple
+									</a>
+								</div>
+								<div class="flex items-center font-matter 2sm:mt-3 mt-2">
+									<div class="w-full border-b border-gray-400"></div>
+									<p class="font-matter sm:text-base text-sm text-gray-800 px-3 opacity-50">OR</p>
+									<div class="w-full border-b border-gray-400"></div>
+								</div>
+								<div class="2sm:mt-4 mt-3">
+									<form>
+										<div class="sm:mb-5 mb-4">
+											<label for="email" class="flex pb-2 font-matter text-base text-gray-900">Username</label>
+											<input id="email" name="text" type="text" class="input" placeholder="Enter username...">
+										</div>
+										<div class="sm:mb-5 mb-4">
+											<label for="email" class="flex pb-2 font-matter text-base text-gray-900">Email</label>
+											<input id="email" name="email" type="email" class="input" placeholder="Enter email...">
+										</div>
+										<div class="sm:mb-5 mb-4">
+											<label for="email" class="flex pb-2 font-matter text-base text-gray-900">Password</label>
+											<input id="email" name="email" type="email" class="input" placeholder="Enter password...">
+										</div>
+										<div class="flex flex-wrap justify-between items-center cursor-pointer sm:mb-6 mb-5">
+											<p class="font-matter 2sm:text-base text-sm text-gray-800">Already account? <a href="javascript:;" class="hover:underline text-gray-900">Log in</a></p>
+										</div>
+										<div class="w-full">
+											<a href="javascript:;" class="w-full flex text-center justify-center text-white rounded-full 2sm:p-[12px] p-[10px] font-matter text-base bg-gray-900 border transition border-gray-900 hover:bg-white hover:border-gray-900 hover:text-gray-900">Register</a>
+										</div>
+									</form>
+								</div>
+							</div>
+							<!-- Register -->
+							<!-- Forgot Password -->
+							<div class="hidden">
+								<h2 class="font-matter text-gray-900 font-bold sm:text-3xl 2sm:text-2xl text-[22px] mb-2">Forgot Password</h2>
+								<p class="font-matter 2sm:text-base text-sm text-gray-800">By continuing, you agree to our <a href="terms-of-use.html" class="text-gray-900 underline hover:no-underline">Terms of use</a> and acknowledge that you understand the <a href="privacy-policy.html" class="text-gray-900 underline hover:no-underline">Privacy Policy</a>.</p>
+								<div class="flex 2sm:flex-nowrap flex-wrap my-5">
+									<a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5 2sm:me-3 2sm:mb-0 mb-3">
+										<div class="me-2 w-6">
+											<img class="w-full" src="{{ theme:asset }}assets/image/google.svg" alt="/">
+										</div>
+										Continue Google
+									</a>
+									<a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5">
+										<div class="me-2 w-6">
+											<img class="w-full" src="{{ theme:asset }}assets/image/apple.svg" alt="/">
+										</div>
+										Continue Apple
+									</a>
+								</div>
+								<div class="flex items-center font-matter 2sm:mt-3 mt-2">
+									<div class="w-full border-b border-gray-400"></div>
+									<p class="font-matter sm:text-base text-sm text-gray-800 px-3 opacity-50">OR</p>
+									<div class="w-full border-b border-gray-400"></div>
+								</div>
+								<div class="2sm:mt-4 mt-3">
+									<form>
+										<div class="sm:mb-5 mb-4">
+											<label for="email" class="flex pb-2 font-matter text-base text-gray-900">Username</label>
+											<input id="email" name="text" type="text" class="input" placeholder="Enter username...">
+										</div>
+										<div class="flex flex-wrap justify-between items-center cursor-pointer sm:mb-6 mb-5">
+											<p class="font-matter 2sm:text-base text-sm text-gray-800">Back to <a href="javascript:;" class="hover:underline text-gray-900">Log in</a></p>
+										</div>
+										<div class="w-full">
+											<a href="javascript:;" class="w-full flex text-center justify-center text-white rounded-full 2sm:p-[12px] p-[10px] font-matter text-base bg-gray-900 border transition border-gray-900 hover:bg-white hover:border-gray-900 hover:text-gray-900">Forgot Password</a>
+										</div>
+									</form>
+								</div>
+							</div>
+							<!-- Forgot Password -->
+							<!-- Reset Password -->
+							<div class="hidden">
+								<h2 class="font-matter text-gray-900 font-bold sm:text-3xl 2sm:text-2xl text-[22px] mb-2">Reset Password</h2>
+								<p class="font-matter 2sm:text-base text-sm text-gray-800">By continuing, you agree to our <a href="terms-of-use.html" class="text-gray-900 underline hover:no-underline">Terms of use</a> and acknowledge that you understand the <a href="privacy-policy.html" class="text-gray-900 underline hover:no-underline">Privacy Policy</a>.</p>
+								<div class="flex 2sm:flex-nowrap flex-wrap my-5">
+									<a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5 2sm:me-3 2sm:mb-0 mb-3">
+										<div class="me-2 w-6">
+											<img class="w-full" src="{{ theme:asset }}assets/image/google.svg" alt="/">
+										</div>
+										Continue Google
+									</a>
+									<a href="javascript:;" class="flex w-full justify-center items-center font-matter sm:text-base text-sm text-gray-900 border rounded-full border-gray-400 2sm:p-3 p-2.5">
+										<div class="me-2 w-6">
+											<img class="w-full" src="{{ theme:asset }}assets/image/apple.svg" alt="/">
+										</div>
+										Continue Apple
+									</a>
+								</div>
+								<div class="flex items-center font-matter 2sm:mt-3 mt-2">
+									<div class="w-full border-b border-gray-400"></div>
+									<p class="font-matter sm:text-base text-sm text-gray-800 px-3 opacity-50">OR</p>
+									<div class="w-full border-b border-gray-400"></div>
+								</div>
+								<div class="2sm:mt-4 mt-3">
+									<form>
+										<div class="sm:mb-5 mb-4">
+											<label for="email" class="flex pb-2 font-matter text-base text-gray-900">Password</label>
+											<input id="email" name="email" type="email" class="input" placeholder="Enter password...">
+										</div>
+										<div class="sm:mb-5 mb-4">
+											<label for="email" class="flex pb-2 font-matter text-base text-gray-900">Confirm Password</label>
+											<input id="email" name="email" type="email" class="input" placeholder="Enter password...">
+										</div>
+										<div class="flex flex-wrap justify-between items-center cursor-pointer sm:mb-6 mb-5">
+											<p class="font-matter 2sm:text-base text-sm text-gray-800">Back to <a href="javascript:;" class="hover:underline text-gray-900">Log in</a></p>
+										</div>
+										<div class="w-full">
+											<a href="javascript:;" class="w-full flex text-center justify-center text-white rounded-full 2sm:p-[12px] p-[10px] font-matter text-base bg-gray-900 border transition border-gray-900 hover:bg-white hover:border-gray-900 hover:text-gray-900">Forgot Password</a>
+										</div>
+									</form>
+								</div>
+							</div>
+							<!-- Reset Password -->
+						</div>
+						<!--== close Model ==-->
+						<button class="flex justify-center items-center font-matter 2sm:text-base text-sm text-gray-800 hover:text-gray-900 hover:underline 2sm:w-[36px] 2sm:h-[36px] w-[32px] h-[32px] p-2 rounded-full bg-gray-500 absolute top-5 right-5" @click="open=false">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M3 3L15 15M3 15L15 3" stroke="#191919" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg>
+						</button>
+						<!--== close Model ==-->
+					</div>
+					<!-- White Box -->
+				</div>
+				<!-- Full Popus -->
+			</div>
+			<!-- Login Model -->
+			<!-- <a href="javascript:;" class="btn-primary 2sm:ms-4 ms-3">Sign Up</a> -->
+		</div>
+		<!-- login btn -->
+	</div>
+</header>

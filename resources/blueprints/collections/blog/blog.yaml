@@ -1,0 +1,116 @@
+title: blog
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+              listable: false
+          -
+            handle: assets_field
+            field:
+              container: assets
+              type: assets
+              display: 'Assets Field'
+          -
+            handle: video
+            field:
+              type: video
+              display: Video
+          -
+            handle: create_date
+            field:
+              latest_date: '2025-04-17'
+              format: 'Y-m-d H:i:s'
+              type: date
+              display: 'Create Date'
+          -
+            handle: long_description
+            field:
+              type: textarea
+              display: 'Long Description'
+          -
+            handle: category
+            field:
+              mode: select
+              taxonomies:
+                - categories
+              type: terms
+              display: Category
+              query_scopes:
+                - category
+          -
+            handle: author
+            field:
+              max_items: 1
+              mode: select
+              collections:
+                - authors
+              type: entries
+              display: Author
+              validate:
+                - required
+          -
+            handle: likes
+            field:
+              mode: select
+              collections:
+                - authors
+              type: entries
+              display: Likes
+          -
+            handle: unlike
+            field:
+              mode: select
+              collections:
+                - authors
+              type: entries
+              display: Unlike
+          -
+            handle: share
+            field:
+              type: text
+              display: Share
+          -
+            handle: comment_count
+            field:
+              default: '0'
+              type: integer
+              display: 'Comment count'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+  new_tab:
+    display: 'New Tab'
+    sections:
+      -
+        display: 'New Section'

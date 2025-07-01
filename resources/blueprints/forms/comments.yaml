@@ -1,0 +1,45 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: post_id
+            field:
+              default: '0'
+              type: text
+              display: 'Post Id'
+              validate:
+                - required
+          -
+            handle: parent_id
+            field:
+              default: '0'
+              type: text
+              display: 'Parent Id'
+          -
+            handle: comment
+            field:
+              default: 'null'
+              type: textarea
+              display: Comment
+              validate:
+                - required
+          -
+            handle: author_id
+            field:
+              type: text
+              display: 'Author Id'
+          -
+            handle: likes
+            field:
+              default: '0'
+              type: integer
+              display: Likes
+          -
+            handle: unlike
+            field:
+              default: '0'
+              type: integer
+              display: Unlike

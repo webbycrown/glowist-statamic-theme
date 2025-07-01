@@ -1,0 +1,257 @@
+/*@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Matter';
+    src: url('../font/Matter-Bold.eot');
+    src: url('../font/Matter-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../font/Matter-Bold.woff2') format('woff2'),
+        url('../font/Matter-Bold.woff') format('woff'),
+        url('../font/Matter-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Matter';
+    src: url('../font/Matter-SemiBold.eot');
+    src: url('../font/Matter-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../font/Matter-SemiBold.woff2') format('woff2'),
+        url('../font/Matter-SemiBold.woff') format('woff'),
+        url('../font/Matter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Matter';
+    src: url('../font/Matter-Medium.eot');
+    src: url('../font/Matter-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../font/Matter-Medium.woff2') format('woff2'),
+        url('../font/Matter-Medium.woff') format('woff'),
+        url('../font/Matter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Matter';
+    src: url('../font/Matter-Regular.eot');
+    src: url('../font/Matter-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../font/Matter-Regular.woff2') format('woff2'),
+        url('../font/Matter-Regular.woff') format('woff'),
+        url('../font/Matter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Matter';
+    src: url('../font/Matter-Light.eot');
+    src: url('../font/Matter-Light.eot?#iefix') format('embedded-opentype'),
+        url('../font/Matter-Light.woff2') format('woff2'),
+        url('../font/Matter-Light.woff') format('woff'),
+        url('../font/Matter-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base{
+    .custom-check input{
+        @apply hidden
+    }
+    .custom-check input:checked ~ span{
+        @apply border-gray-900 bg-gray-900 	
+    }
+    .input {
+        @apply block w-full font-matter text-base text-gray-900 placeholder:text-base placeholder:text-gray-800 placeholder:opacity-70 px-6 py-[12px] border rounded-full border-gray-400 focus:outline-none focus:border-green/30
+    }
+    .textarea {
+        @apply block min-h-[150px] w-full font-matter text-base text-gray-900 placeholder:text-base placeholder:text-gray-800 placeholder:opacity-70 px-6 py-[12px] border rounded-2xl border-gray-400 focus:outline-none focus:border-green/30
+    }
+    .mobile-search input:focus ~ .search-popup {
+        display: block;
+    }*/
+    /* ====== buttons ====== */
+    /*.btn-primary {
+        @apply flex items-center font-matter text-base font-normal rounded-full bg-gray-900 text-white px-[22px] py-[8px] border border-gray-900 hover:text-gray-900 hover:bg-white whitespace-nowrap	
+    }
+    .btn-primary:hover svg path {
+        @apply stroke-gray-900
+    }
+    .btn-small {
+        @apply flex items-center font-matter text-sm font-normal rounded-full bg-gray-500 px-[18px] py-[8px] hover:text-white hover:bg-gray-900
+    }
+    .btn-small.following {
+        @apply text-white bg-gray-900
+    }
+    .btn-small-dark {
+        @apply flex items-center font-matter text-sm font-normal rounded-full bg-gray-900 text-white px-[18px] py-[7px] hover:text-gray-900 hover:bg-white border border-gray-900
+    }*/
+    /* ====== buttons ====== */
+    /*.nav-item .nav-link {
+        @apply flex items-center mb-1 py-[10px] px-[12px] rounded-lg font-matter text-base text-gray-800
+    }
+    .nav-item.active > a {
+        @apply bg-gray-900 text-white
+    }
+    .nav-item.active a .chevron {
+        @apply rotate-180
+    }
+    .nav-item.active a .chevron svg path {
+        @apply fill-white
+    }
+    .nav-item.active a div > svg path {
+        @apply stroke-white
+    }
+    .sub-menu ul li a {
+        @apply flex font-matter text-base text-gray-800 py-[6px] px-[10px] rounded-md hover:bg-gray-500
+    }
+    .plus-btn:hover svg path {
+        @apply fill-white
+    }
+    .date:before  {
+        @apply 2sm:content-[''] w-[3px] h-[3px] bg-gray-900 rounded-full absolute top-[11px] start-[6px]
+    }
+    .search-popup .date:before  {
+        @apply content-[''] w-[2px] h-[2px] bg-gray-900 rounded-full absolute top-[9px] start-[3px]
+    }
+    .action-result a:not(:first-child):before {
+        @apply 2sm:content-[''] w-[3px] h-[3px] bg-gray-800 rounded-full absolute top-[9px] start-[6px]
+    }
+    .more-less {
+        @apply absolute bottom-0 end-0 bg-white ps-2 cursor-pointer text-green font-matter
+    }
+    ul.post-action li a {
+        @apply flex items-center justify-center	2sm:w-[34px] 2sm:h-[34px] w-[24px] h-[24px] rounded-full bg-gray-500 hover:bg-gray-900
+    }
+    ul.post-action li a:hover svg path {
+        @apply stroke-white
+    }
+    ul.topic-tabs li a.active {
+        @apply border-b-2 border-gray-900 text-gray-900 
+    }
+    ul.content-point li {
+        @apply 2sm:ps-[20px] ps-[15px] mb-[10px] font-matter 2sm:text-base text-sm text-gray-800 relative
+    }
+    ul.content-point li:before {
+        @apply content-[''] 2sm:w-[6px] 2sm:h-[6px] w-[4px] h-[4px] bg-gray-900 rounded-full absolute sm:top-[12px] 2sm:top-[10px] top-[8px] 2sm:start-[5px] start-[3px]
+    }
+    .email-btn:hover svg path {
+        @apply stroke-white
+    }*/
+    /*==== Start-Post Slider Css ====*/
+   /* .post-slider .swiper-button-next, 
+    .post-slider .swiper-button-prev  {
+        @apply w-full max-w-[32px] min-w-[32px] h-[32px] rounded-full bg-[#000000]/60
+    }
+    .post-slider .swiper-button-next:after, 
+    .post-slider .swiper-button-prev:after  {
+        @apply text-white text-[15px]
+    }
+    .post-slider .swiper-pagination-dots {
+        @apply w-full absolute bottom-[20px] left-0 z-30
+    }
+    .post-slider .swiper-pagination {
+        @apply w-fit flex mx-auto static bg-[#2B2B2B] p-1 rounded-full
+    }
+    .post-slider .swiper-pagination .swiper-pagination-bullet {
+        @apply bg-white/60 mx-[3px]
+    }
+    .post-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        @apply bg-white
+    }*/
+    /*==== End-Post Slider Css ====*/
+
+   /* .gw-left-point:before  {
+        @apply content-[''] w-[3px] h-[3px] bg-gray-800 rounded-full absolute top-[10px] start-[5px]
+    }
+    ul.social-app {
+        @apply flex
+    }
+    ul.social-app li {
+        @apply me-[10px]
+    }
+    ul.social-app li a {
+        @apply w-full flex justify-center items-center lg:min-w-[36px] lg:max-w-[36px] lg:h-[36px] min-w-[30px] max-w-[30px] h-[30px] rounded-full bg-gray-500 hover:bg-gray-900 p-1.5 
+    }
+    ul.social-app li a:hover svg path {
+        @apply stroke-white
+    }
+    .authors-grid .author-item > a, .tags-grid .tags-item > a {
+       @apply h-[180px] overflow-hidden	flex
+    }
+    .tags-grid .tags-item > a img {
+        @apply ease-in duration-200 object-cover w-full	
+    }
+    .tags-grid .tags-item > a:hover img {
+        @apply scale-110
+    }
+
+    .contact-social li a:hover svg path {
+        @apply fill-white
+    }*/
+
+
+/*============= Media CSS ============= */
+   
+/*@media (max-width:1280px){
+    .sidebar {
+        @apply left-[-250px]
+    }
+    .sidebar.show {
+        @apply left-[0]
+    }
+    .mobile-search {
+        @apply absolute top-0 left-0 z-30 hidden
+    }
+    .mobile-search.show {
+        @apply flex
+    }
+}
+
+@media (max-width:1024px){
+    .authors-grid .author-item > a {
+        @apply h-[140px]
+    }
+   
+    
+}
+@media (max-width:480px){
+    .btn-small {
+        @apply text-[12px] px-[14px] py-[6px]
+    }
+    .btn-small-dark {
+        @apply text-[12px] px-[14px] py-[5px]
+    }
+    .date:before  {
+        @apply top-[9px] start-[7px]
+    }
+    ul.post-action li a svg {
+        @apply w-[16px] h-[16px]
+    }
+    .btn-primary {
+        @apply px-[18px] py-[6px] text-sm
+    }
+    .more-less {
+        @apply text-sm
+    }
+    .input {
+        @apply px-5 py-[10px]
+    }
+    .authors-grid .author-item > a {
+        @apply h-[180px]
+    }
+    
+
+}
+ 
+
+
+
+
+
+
+}*/

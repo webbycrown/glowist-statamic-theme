@@ -1,0 +1,10 @@
+title: Setting
+data:
+  e_mail: info@glowist.com
+  favicon:
+    - image/favicon.png
+  copyright: '© Copyright 2024 - Glowist. All Rights Reserved.'
+  logo:
+    - image/logo.png
+  default_background_image: image/banner-1.png
+  default_image: image/user.jpg

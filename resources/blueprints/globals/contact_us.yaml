@@ -1,0 +1,27 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: e_mail
+            field:
+              type: text
+              display: E-mail
+              validate:
+                - required
+                - email
+          -
+            handle: phone_number
+            field:
+              type: text
+              display: 'Phone Number'
+              validate:
+                - required
+                - 'regex:/^\+\d{1,15}$/'
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description

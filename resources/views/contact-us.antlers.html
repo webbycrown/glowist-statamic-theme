@@ -1,0 +1,67 @@
+
+            <div class="flex justify-center">
+                <!-- Contact -->
+                <div class="max-w-[1130px] w-full mx-auto">
+                    <h2 class="font-matter font-semibold sm:text-3xl 2sm:text-2xl text-[22px] sm:my-[15px] mb-[10px] mt-2">Contact Us</h2>
+                    <p class="font-matter 2sm:text-base text-sm text-gray-800 pb-6 border-b border-gray-400 mb-6">{{ contact_us }} {{description}}  {{ /contact_us }}</p>
+                    <div class="flex lg:flex-nowrap flex-wrap">
+                        <div class="w-full lg:pe-[50px] lg:border-e lg:border-gray-400">
+                            {{ form:create in="contact_us" }}
+                            <div class="sm:mb-5 mb-4">
+                                <label for="name" class="flex pb-2 font-matter text-base text-gray-900">Name</label>
+                                <input id="name" name="name" type="text" class="input" placeholder="your name...">
+                            </div>
+                            <div class="sm:mb-5 mb-4">
+                                <label for="email" class="flex pb-2 font-matter text-base text-gray-900">Email</label>
+                                <input id="email" name="email" type="email" class="input" placeholder="your email...">
+                            </div>
+                            <div class="sm:mb-5 mb-4">
+                                <label for="message" class="flex pb-2 font-matter text-base text-gray-900">Message</label>
+                                <textarea name="message" id="message" class="textarea" placeholder="your message..."></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn-primary w-fit">Submit</button>
+                            </div>
+
+                            {{ if success }}
+                            <script>
+                                toastr.success('Thanks for contacting us!');
+                            </script>
+                            {{ /if }}
+
+                            {{ if errors }}
+                            <script>
+                                {{ errors }}
+                                toastr.error('{{ value }}');
+                                {{ /errors }}
+                            </script>
+                            {{ /if }}
+                            {{ /form:create }}
+                        </div>
+                        <div class="py-5 lg:px-10 w-full">
+                            <div class="2sm:mb-16 mb-10">
+                                <p class="font-matter text-sm uppercase text-gray-800 text-center">E-MAIL</p>
+                                <h3 class="font-matter font-semibold sm:text-3xl 2sm:text-2xl text-[22px] text-center"><a href="mailto:info@glowist.com">{{ contact_us }} {{e_mail}}  {{ /contact_us }}</a></h3>
+                            </div>
+                            <div class="2sm:mb-16 mb-10">
+                                <p class="font-matter text-sm uppercase text-gray-800 text-center">PHONE</p>
+                                <h3 class="font-matter font-semibold sm:text-3xl 2sm:text-2xl text-[22px] text-center"><a href="tel:+1 501 036 5036">{{ contact_us }} {{phone_number}}  {{ /contact_us }}</a></h3>
+                            </div>
+                            <div>
+                                <p class="font-matter text-sm uppercase text-gray-800 text-center mb-2">SOCIALS</p>
+                                <ul class="flex 2sm:flex-nowrap flex-wrap justify-center contact-social">
+                                    {{ socials }} 
+                                    {{ socials }}
+                                     <li class="m-1"><a href="{{url}}" class="flex justify-center items-center sm:min-w-[50px] sm:max-w-[50px] sm:h-[50px] min-w-[40px] max-w-[40px] h-[40px] rounded-full border border-gray-400 hover:border-gray-900 hover:bg-gray-900">
+                                       {{ icon }}
+                                    </a></li>
+                                    {{ /socials }}  
+                                    {{ /socials }}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact -->
+            </div>
+      

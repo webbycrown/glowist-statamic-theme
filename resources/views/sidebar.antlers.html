@@ -1,0 +1,90 @@
+<div class="sidebar fixed md:top-[73px] 2sm:top-[67px] top-[55px] md:h-[calc(100%-73px)] 2sm:h-[calc(100%-67px)] h-[calc(100%-55px)] flex flex-wrap content-between max-w-[250px] bg-white border-e border-gray-400 z-10">
+        <!-- Nav-Menus -->
+        <nav class="xl:p-[20px] p-[15px] w-full h-[calc(100%-108px)] overflow-auto">
+            <div class="mb-4 pb-4 border-b border-gray-400">
+                <h3 class="py-[10px] px-[12px] font-matter text-xs font-medium text-gray-800 uppercase tracking-wider">Main</h3>
+                <ul class="nav-menu">
+                    {{ nav:sidebar }}
+                    <li class="nav-item{{ if children  }} has-submenu  {{ /if }} {{ if is_current }}active{{ /if }} {{ if has_active }}active{{ /if }}">
+                        <a href="{{ url }}" class="nav-link">
+                            <div class="flex items-center">{{ title }}</div> 
+                            {{ if children  }}
+                            <span class="chevron ms-auto flex">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.47108 3.52876C2.21073 3.26841 1.78862 3.26841 1.52827 3.52876C1.26792 3.78911 1.26792 4.21122 1.52827 4.47157L5.52827 8.47157C5.78862 8.73192 6.21073 8.73192 6.47108 8.47157L10.4711 4.47157C10.7314 4.21122 10.7314 3.78911 10.4711 3.52876C10.2107 3.26841 9.78862 3.26841 9.52827 3.52876L5.99967 7.05735L2.47108 3.52876Z" fill="#646464"/>
+                                </svg>
+
+                            </span>
+                            {{ /if }}
+                        </a>
+
+                        {{ if children }}
+                            <div class="sub-menu py-[12px] ps-[20px]" style="display: none;">
+                            {{ children }}
+                                <ul class="sub-menu-ul ps-[12px] border-s border-gray-400">
+                                    <li class="sub-menu-item {{ if is_current }}active{{ /if }}"><a href="{{ url }}">{{ title }}</a></li>
+                                </ul>
+                            {{ /children }}
+                            </div>
+                        {{ /if }}
+                    </li>
+                    {{ /nav:sidebar }}
+        </ul>
+    </div>
+    <div class="hidden">
+        <h3 class="py-[10px] px-[12px] mb-1 font-matter text-xs font-medium text-gray-800 uppercase tracking-wider">resources</h3>
+        <ul class="nav-menu">
+            <li class="nav-item xl:hidden"><a href="authors.html" class="nav-link">
+                <div class="pe-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15.0001 17.5007C15.0001 15.7325 14.2977 14.0368 13.0475 12.7866C11.7972 11.5364 10.1015 10.834 8.33341 10.834C6.5653 10.834 4.86961 11.5364 3.61937 12.7866C2.36913 14.0368 1.66675 15.7325 1.66675 17.5007" stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M8.33341 10.8333C10.6346 10.8333 12.5001 8.96785 12.5001 6.66667C12.5001 4.36548 10.6346 2.5 8.33341 2.5C6.03223 2.5 4.16675 4.36548 4.16675 6.66667C4.16675 8.96785 6.03223 10.8333 8.33341 10.8333Z" stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M18.3333 16.6673C18.3333 13.859 16.6667 11.2507 15 10.0007C15.5478 9.58963 15.9859 9.04989 16.2755 8.42921C16.565 7.80853 16.6971 7.12604 16.66 6.44215C16.6229 5.75826 16.4178 5.09406 16.0629 4.50832C15.7079 3.92258 15.2141 3.43337 14.625 3.08398" stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            Authors</a>
+        </li>
+        <li class="nav-item xl:hidden"><a href="about.html" class="nav-link">
+            <div class="pe-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <g clip-path="url(#clip0_357_4)">
+                        <path d="M10.0003 18.8215C14.8724 18.8215 18.8219 14.8719 18.8219 9.99984C18.8219 5.12779 14.8724 1.17822 10.0003 1.17822C5.12828 1.17822 1.17871 5.12779 1.17871 9.99984C1.17871 14.8719 5.12828 18.8215 10.0003 18.8215Z" stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M10 13.5285V9.99984M10 6.47119H10.0088" stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+            </div>
+        About Us</a>
+    </li>
+    <li class="nav-item xl:hidden"><a href="contact.html" class="nav-link">
+        <div class="pe-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M8.57989 5.86212L6.72804 1.88064C6.46877 1.1399 6.0336 0.985584 5.84842 1.00102C2.58916 1.51953 1.92866 4.21089 2.00581 5.49175C1.86692 14.3343 9.64469 18.038 14.0891 18.1306C18.5336 18.2232 18.9502 14.3806 18.9965 14.0566C19.0336 13.7973 18.765 13.5782 18.6262 13.501C17.3762 12.9609 14.7743 11.8158 14.3669 11.5566C13.9595 11.2973 13.5181 11.5103 13.3484 11.6492C12.7928 12.0812 11.6076 13.0288 11.3114 13.3621C11.0151 13.6954 10.6632 13.6862 10.5243 13.6399C7.83914 12.2973 6.82063 10.3529 6.49656 9.8436C6.2373 9.43619 6.38853 9.0257 6.49656 8.87138C6.95952 8.26953 7.97804 6.99175 8.34841 6.69545C8.71878 6.39916 8.65705 6.01644 8.57989 5.86212Z" stroke="#646464" stroke-width="1.5"></path>
+            </svg>
+        </div>
+    Contact Us</a>
+</li>
+<li class="nav-item hidden"><a href="profile-edit.html" class="nav-link">
+    <div class="pe-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <g clip-path="url(#clip0_1155_114)">
+                <path d="M18.5438 5.49871L18.0878 4.70695C17.7435 4.10758 17.5709 3.8079 17.2773 3.68858C16.9847 3.56833 16.6533 3.6636 15.9896 3.85137L14.8634 4.16955C14.4397 4.2676 13.9957 4.2121 13.6098 4.01231L13.2987 3.83287C12.9673 3.62006 12.7124 3.30666 12.5713 2.93844L12.263 2.01534C12.0599 1.40487 11.9584 1.09963 11.7174 0.925741C11.4765 0.75 11.1553 0.75 10.5146 0.75H9.48537C8.84473 0.75 8.52441 0.75 8.28256 0.925741C8.04163 1.09963 7.94101 1.40487 7.73793 2.01534L7.42961 2.93844C7.28826 3.3068 7.03305 3.6202 6.70128 3.83287L6.39019 4.01324C6.00433 4.2121 5.5594 4.2676 5.13661 4.17048L4.01042 3.85137C3.34671 3.6636 3.01531 3.56926 2.72269 3.68858C2.42914 3.8079 2.25652 4.10758 1.9122 4.70603L1.45711 5.49871C1.13402 6.06108 0.972478 6.34135 1.00386 6.64011C1.03525 6.93979 1.25126 7.18028 1.68327 7.66218L2.63499 8.72865C2.86762 9.02371 3.03285 9.53799 3.03285 10.0005C3.03285 10.4629 2.86762 10.9772 2.63592 11.2723L1.68327 12.3378C1.25126 12.8197 1.03525 13.0611 1.00386 13.3599C0.972478 13.6587 1.1331 13.9398 1.45619 14.5013L1.9122 15.294C2.25652 15.8924 2.42914 16.1921 2.72269 16.3114C3.01624 16.4307 3.34671 16.3373 4.01042 16.1486L5.13661 15.8304C5.56022 15.7333 6.00445 15.789 6.39111 15.9877L6.70128 16.1671C7.0336 16.3799 7.28837 16.6944 7.42869 17.0625L7.737 17.9847C7.94009 18.5951 8.04163 18.9004 8.28256 19.0761C8.52441 19.25 8.84473 19.25 9.48537 19.25H10.5146C11.1553 19.25 11.4765 19.25 11.7174 19.0752C11.9584 18.9004 12.0599 18.5951 12.2621 17.9847L12.5713 17.0625C12.7116 16.6934 12.9664 16.3799 13.2987 16.1671L13.6089 15.9877C13.9966 15.7888 14.4397 15.7324 14.8643 15.8304L15.9905 16.1486C16.6533 16.3373 16.9847 16.4317 17.2773 16.3123C17.5709 16.1921 17.7435 15.8924 18.0878 15.294L18.5429 14.5013C18.866 13.9398 19.0275 13.6596 18.9961 13.3599C18.9647 13.0602 18.7487 12.8197 18.3167 12.3378L17.365 11.2723C17.1324 10.9763 16.9671 10.4629 16.9671 10.0005C16.9671 9.53799 17.1324 9.02371 17.3641 8.72865L18.3167 7.66218C18.7487 7.1812 18.9647 6.93979 18.9961 6.64011C19.0275 6.34042 18.8669 6.06108 18.5438 5.49871Z" stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.5 13.5C6.85469 12.9218 7.36489 12.4417 7.97929 12.1079C8.59368 11.7742 9.29062 11.5986 10 11.5988C11.496 11.5988 12.801 12.3631 13.5 13.5M12 7.38235C12 7.88158 11.7893 8.36037 11.4142 8.71338C11.0391 9.06639 10.5304 9.26471 10 9.26471C9.46957 9.26471 8.96086 9.06639 8.58579 8.71338C8.21071 8.36037 8 7.88158 8 7.38235C8 6.88312 8.21071 6.40434 8.58579 6.05133C8.96086 5.69832 9.46957 5.5 10 5.5C10.5304 5.5 11.0391 5.69832 11.4142 6.05133C11.7893 6.40434 12 6.88312 12 7.38235Z" stroke="#646464" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+        </svg>
+    </div>
+Settings</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Nav-Menus -->
+<!-- Copyright -->
+<div class="px-[30px] py-[20px]">
+    <p class="font-matter text-sm text-gray-800 mb-2">{{setting}} {{ copyright }}  {{/setting}}</p>
+    <p class="flex">
+        <a href="/privacy-policy" class="flex font-matter text-sm text-gray-800 hover:text-gray-900 hover:underline">Privacy Policy</a>
+        <a href="/terms-of-use" class="flex font-matter text-sm text-gray-800 hover:text-gray-900 hover:underline ps-3 relative gw-left-point">Terms of use</a>
+    </p>
+</div>
+<!-- Copyright -->
+</div>

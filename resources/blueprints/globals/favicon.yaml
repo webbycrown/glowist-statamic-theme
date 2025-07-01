@@ -1,0 +1,13 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: favicon
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: favicon

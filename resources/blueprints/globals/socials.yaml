@@ -1,0 +1,34 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: socials
+            field:
+              type: grid
+              display: Socials
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                    validate:
+                      - required
+                    always_save: false
+                -
+                  handle: icon
+                  field:
+                    type: textarea
+                    display: Icon
+                    validate:
+                      - required
+                -
+                  handle: url
+                  field:
+                    type: text
+                    display: Url
+                    validate:
+                      - required

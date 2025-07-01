@@ -1,0 +1,98 @@
+{{ if {session:has key="author_logged_in"} == false }} {{ redirect to="/login" }} {{/if }}
+<div class="w-full">
+            <div class="max-w-[800px] mx-auto w-full px-4 md:py-[40px] sm:py-[30px] py-[20px]">
+                <div class="sm:pb-4 pb-3 sm:mb-[20px] mb-[15px] border-b border-gray-400">
+                    <h1 class="font-matter text-gray-900 font-semibold sm:text-3xl 2sm:text-2xl text-[22px]">Edit Profile</h1>
+                </div>
+                <form method="POST" action="{{ route:profile.update }}" enctype="multipart/form-data" class="w-full">
+                    {{ csrf_field }}
+                    <input type="hidden" name="id" value="{{ author_session:id }}">
+                    <!-- avatar -->
+                    <div>
+                        <div class="mb-5">
+                            <label for="name" class="flex pb-2 font-matter text-base text-gray-900">Profile Picture</label>
+                            <div class="small-12 medium-2 large-2 columns relative w-fit">
+                                <div class="circle w-fit">
+                                    <img class="profile-pic w-[80px] h-[80px] rounded-full" src="{{ theme:asset }}assets/{{ author_session:avatar }}" alt="/">
+
+                                </div>
+                                <div class="absolute bottom-0 right-0">
+                                    <div class="p-image flex justify-center items-center w-[30px] h-[30px] bg-white rounded-full border border-gray-400 overflow-hidden relative">
+                                        <input type="file" name="avatar" value="{{ author_session:avatar }}" class="file-upload opacity-0" accept="image/*"/>
+
+                                        <span class="flex absolute top-1.5 left-1.5 pointer-events-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M11.102 2.30348L11.5346 1.87093C12.2512 1.15427 13.4132 1.15427 14.1298 1.87093C14.8465 2.58759 14.8465 3.74953 14.1298 4.46619L13.6973 4.89874M11.102 2.30348C11.102 2.30348 11.1561 3.22263 11.9671 4.03365C12.7781 4.84467 13.6973 4.89874 13.6973 4.89874M11.102 2.30348L7.12544 6.28005C6.85609 6.5494 6.72142 6.68407 6.6056 6.83256C6.46898 7.00772 6.35185 7.19725 6.25628 7.39778C6.17526 7.56778 6.11503 7.74846 5.99458 8.10982L5.60893 9.26677M13.6973 4.89874L11.709 6.88703M9.7207 8.87532C9.45136 9.14466 9.31668 9.27933 9.16819 9.39515C8.99303 9.53177 8.80351 9.64891 8.60297 9.74448C8.43298 9.82549 8.2523 9.88572 7.89094 10.0062L6.73398 10.3918M6.73398 10.3918L5.98538 10.6414C5.80755 10.7006 5.61149 10.6544 5.47895 10.5218C5.3464 10.3893 5.30012 10.1932 5.35939 10.0154L5.60893 9.26677M6.73398 10.3918L5.60893 9.26677" stroke="#111111" stroke-width="1.2" stroke-linecap="round"/>
+                                                <path d="M15.2673 8.0001C15.2673 7.66873 14.9987 7.4001 14.6673 7.4001C14.3359 7.4001 14.0673 7.66873 14.0673 8.0001H15.2673ZM8.00065 1.93344C8.33202 1.93344 8.60065 1.66481 8.60065 1.33344C8.60065 1.00206 8.33202 0.733435 8.00065 0.733435V1.93344ZM4.96775 13.2555C4.68092 13.0896 4.31388 13.1876 4.14795 13.4745C3.98203 13.7613 4.08005 14.1283 4.36688 14.2943L4.96775 13.2555ZM1.7065 11.6339C1.87243 11.9207 2.23946 12.0187 2.5263 11.8528C2.81314 11.6869 2.91115 11.3198 2.74523 11.033L1.7065 11.6339ZM14.0673 8.0001C14.0673 11.3506 11.3512 14.0668 8.00065 14.0668V15.2668C12.0139 15.2668 15.2673 12.0134 15.2673 8.0001H14.0673ZM8.00065 0.733435C3.98738 0.733435 0.733984 3.98683 0.733984 8.0001H1.93398C1.93398 4.64957 4.65012 1.93344 8.00065 1.93344V0.733435ZM4.36688 14.2943C5.43632 14.9129 6.67807 15.2668 8.00065 15.2668V14.0668C6.89465 14.0668 5.85947 13.7714 4.96775 13.2555L4.36688 14.2943ZM0.733984 8.0001C0.733984 9.32268 1.08786 10.5644 1.7065 11.6339L2.74523 11.033C2.2294 10.1413 1.93398 9.1061 1.93398 8.0001H0.733984Z" fill="#111111"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="name" class="flex pb-2 font-matter text-base text-gray-900">Cover Photo</label>
+                            <div class="small-12 medium-2 large-2 columns relative">
+                                <div class="circle">
+                                    <!-- <img class="cover-sphoto w-full sm:h-[400px] 2sm:h-[300px] h-[200px] object-cover" src="image/tag-1.png" alt="/"> -->
+                                   
+                                    <img src="{{ author_session:authorData field='background_image' }}" alt="Background Image" class="w-full sm:h-[400px] h-[200px] object-cover" />
+                                   
+                                </div>
+                                <div class="absolute top-3.5 right-3.5">
+                                    <div class="p-image flex justify-center items-center w-[30px] h-[30px] bg-white rounded-full border border-gray-400 overflow-hidden relative">
+                                        <input class="cover-upload opacity-0" value="{{ author_session:authorData field='background_image' }}" name="background_image" id="background_image" type="file" accept="image/*"/>
+                                        <span class="flex absolute top-1.5 left-1.5 pointer-events-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="M11.102 2.30348L11.5346 1.87093C12.2512 1.15427 13.4132 1.15427 14.1298 1.87093C14.8465 2.58759 14.8465 3.74953 14.1298 4.46619L13.6973 4.89874M11.102 2.30348C11.102 2.30348 11.1561 3.22263 11.9671 4.03365C12.7781 4.84467 13.6973 4.89874 13.6973 4.89874M11.102 2.30348L7.12544 6.28005C6.85609 6.5494 6.72142 6.68407 6.6056 6.83256C6.46898 7.00772 6.35185 7.19725 6.25628 7.39778C6.17526 7.56778 6.11503 7.74846 5.99458 8.10982L5.60893 9.26677M13.6973 4.89874L11.709 6.88703M9.7207 8.87532C9.45136 9.14466 9.31668 9.27933 9.16819 9.39515C8.99303 9.53177 8.80351 9.64891 8.60297 9.74448C8.43298 9.82549 8.2523 9.88572 7.89094 10.0062L6.73398 10.3918M6.73398 10.3918L5.98538 10.6414C5.80755 10.7006 5.61149 10.6544 5.47895 10.5218C5.3464 10.3893 5.30012 10.1932 5.35939 10.0154L5.60893 9.26677M6.73398 10.3918L5.60893 9.26677" stroke="#111111" stroke-width="1.2" stroke-linecap="round"/>
+                                                <path d="M15.2673 8.0001C15.2673 7.66873 14.9987 7.4001 14.6673 7.4001C14.3359 7.4001 14.0673 7.66873 14.0673 8.0001H15.2673ZM8.00065 1.93344C8.33202 1.93344 8.60065 1.66481 8.60065 1.33344C8.60065 1.00206 8.33202 0.733435 8.00065 0.733435V1.93344ZM4.96775 13.2555C4.68092 13.0896 4.31388 13.1876 4.14795 13.4745C3.98203 13.7613 4.08005 14.1283 4.36688 14.2943L4.96775 13.2555ZM1.7065 11.6339C1.87243 11.9207 2.23946 12.0187 2.5263 11.8528C2.81314 11.6869 2.91115 11.3198 2.74523 11.033L1.7065 11.6339ZM14.0673 8.0001C14.0673 11.3506 11.3512 14.0668 8.00065 14.0668V15.2668C12.0139 15.2668 15.2673 12.0134 15.2673 8.0001H14.0673ZM8.00065 0.733435C3.98738 0.733435 0.733984 3.98683 0.733984 8.0001H1.93398C1.93398 4.64957 4.65012 1.93344 8.00065 1.93344V0.733435ZM4.36688 14.2943C5.43632 14.9129 6.67807 15.2668 8.00065 15.2668V14.0668C6.89465 14.0668 5.85947 13.7714 4.96775 13.2555L4.36688 14.2943ZM0.733984 8.0001C0.733984 9.32268 1.08786 10.5644 1.7065 11.6339L2.74523 11.033C2.2294 10.1413 1.93398 9.1061 1.93398 8.0001H0.733984Z" fill="#111111"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- avatar -->
+                    <div class="flex 2sm:flex-nowrap flex-wrap">
+                        <div class="sm:mb-5 mb-4 w-full 2sm:pe-2">
+                            <label for="name" class="flex pb-2 font-matter text-base text-gray-900">First Name</label>
+                            <input id="first_name" name="first_name" type="text" class="input" placeholder="First name..." value="{{ author_session:authorData field='first_name' }}">
+                        </div>
+                        <div class="sm:mb-5 mb-4 w-full 2sm:ps-2">
+                            <label for="name" class="flex pb-2 font-matter text-base text-gray-900">Last Name</label>
+                            <input id="last_name" name="last_name" type="text" class="input" placeholder="Last name..." value="{{ author_session:authorData field='last_name' }}">
+                        </div>
+                    </div>
+                    <div class="sm:mb-5 mb-4">
+                        <label for="email" class="flex pb-2 font-matter text-base text-gray-900">Email</label>
+                        <input id="email" name="email" type="email" class="input" placeholder="your email..." value="{{ author_session:authorData field='email' }}">
+                    </div>
+                    <div class="sm:mb-5 mb-4">
+                        <label for="Position" class="flex pb-2 font-matter text-base text-gray-900">Position</label>
+                        <input id="Position" name="position" type="text" class="input" placeholder="your position..." value="{{ author_session:authorData field='job_title' }}">
+                    </div>
+                    <div class="sm:mb-5 mb-4">
+                        <label for="email" class="flex pb-2 font-matter text-base text-gray-900">About info</label>
+                        <textarea name="description" id="description" class="textarea" placeholder="About info...">{{ author_session:authorData field='about' }}</textarea>
+                    </div>
+                    <div class="sm:mb-5 mb-4 hidden">
+                        <label for="Website" class="flex pb-2 font-matter text-base text-gray-900">Website</label>
+                        <div class="relative">
+                            <span class="flex justify-center items-center absolute left-[2px] top-[1px] w-[54px] border-e border-gray-400 h-[48px] bg-[#F6F6F6] rounded-s-3xl">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12.0002 22.2952C17.6861 22.2952 22.2954 17.6859 22.2954 12C22.2954 6.31414 17.6861 1.70483 12.0002 1.70483C6.31438 1.70483 1.70508 6.31414 1.70508 12C1.70508 17.6859 6.31438 22.2952 12.0002 22.2952Z" stroke="#646464" stroke-width="1.33837" stroke-linecap="square"/>
+                                    <path d="M12.0009 22.2952C14.7463 19.7994 16.1189 16.3676 16.1189 12C16.1189 7.63235 14.7463 4.20063 12.0009 1.70483C9.2555 4.20063 7.88281 7.63235 7.88281 12C7.88281 16.3676 9.2555 19.7994 12.0009 22.2952Z" stroke="#646464" stroke-width="1.33837" stroke-linecap="round"/>
+                                    <path d="M2.21875 8.9115H21.7796M2.21875 15.0886H21.7796" stroke="#646464" stroke-width="1.33837" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                            <input id="Website" name="Website" type="link" class="input ps-[70px]" placeholder="https://www.demooo.com/..." value="https://www.demooo.com/">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end">
+                        <a href="javascript:;" class="font-matter text-gray-900 hover:text-gray-800 mx-5">Cancel</a>
+                        <button type="submit" class="btn-primary w-fit">Update Profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
