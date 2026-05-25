@@ -1,9 +1,13 @@
 {
     "name": "webbycrown/glowist-statamic-theme",
+    "type": "statamic-starter-kit",
+    "description": "At Glowist Statamic, we believe in empowering creators with thoughtfully crafted design components. Our theme is built to deliver flexibility, clarity, and a seamless content experience making it easier than ever to build beautiful, engaging websites.",
+    "require": {
+        "statamic/cms": "*"
+    },
     "extra": {
         "statamic": {
-            "name": "Glowist Statamic Theme",
-            "description": "At Glowist Statamic, we believe in empowering creators with thoughtfully crafted design components. Our theme is built to deliver flexibility, clarity, and a seamless content experience—making it easier than ever to build beautiful, engaging websites."
+            "starter-kit": true
         }
     }
 }
