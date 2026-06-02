@@ -71,3 +71,8 @@ If you have the [Statamic CLI Tool](https://github.com/statamic/cli) installed, 
 
 ```bash
 statamic new my-site webbycrown/glowist-statamic-theme
+```
+---
+<div align="center">
+  <strong>Made with ❤️ by <a href="https://www.webbycrown.com/custom-statamic-development-services-company/">WebbyCrown Solutions</a></strong>
+</div>
